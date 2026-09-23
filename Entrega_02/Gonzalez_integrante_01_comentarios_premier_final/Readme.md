@@ -1,5 +1,5 @@
-#Historial de Procesos y Decisiones
-##Explicación del Proceso de Limpieza de Datos
+# Historial de Procesos y Decisiones
+## Explicación del Proceso de Limpieza de Datos
 Paso 1: Extracción y recolección inicial de los datos
 El objetivo primordial del proyecto consistió en recolectar comentarios reales de usuarios en Instagram para analizar el sentimiento público sobre partidos de fútbol de la Premier League. En una primera instancia, intenté utilizar extensiones web y herramientas automatizadas de scraping para descargar directamente los comentarios de las publicaciones seleccionadas. Sin embargo, me enfrenté a barreras técnicas y mecanismos anti-scraping Instagram.
 Ante estas restricciones técnicas, tomé la decisión metodológica de realizar una extracción manual mediante volcado directo de texto desde la interfaz web hacia un libro de Microsoft Excel (guardado en el archivo Libro3.xlsx). Este paso garantizó contar con la totalidad de la muestra deseada de 905 comentarios distribuidos en seis partidos clave de tres equipos principales: Chelsea (contra Hull City y Brentford), Arsenal (contra Brighton e Ipswich) y Tottenham Hotspur (contra Villa y Everton).
@@ -14,7 +14,7 @@ Publicaciones Oficiales en Instagram del Chelsea FC: Secciones de comentarios en
 Publicaciones Oficiales en Instagram del Arsenal FC: Secciones de comentarios en las publicaciones de los partidos Arsenal V Brighton y Arsenal V Ipswich.
 Publicaciones Oficiales en Instagram de Tottenham Hotspur: Secciones de comentarios en las publicaciones de los partidos Spurs V Villa y Spurs V Everton.
 Respaldo Crudo Original (Libro3.xlsx): Archivo maestro que almacena el volcado bruto de la extracción sin procesar para auditoría de transparencia.
-##Justificación Periodística y Metodológica
+## Justificación Periodística y Metodológica
 Elegí Instagram como principal fuente debido a que es la plataforma que más se usa para comentar los partidos por los hinchas, lo que es un indicador fiel al sentimiento del hincha en mi opinión, ya que aquí escriben sin censura lo que piensan. Elegí estos 3 clubes porque son parte del denominado “Big Six”, además, estos viven presentes muy distintos, con los Spurs peleando el descenso y con el Arsenal peleando para generar una dinastía en la premier (El Chelsea es un punto medio).
 ## Ejemplos de Preguntas Respondibles con la Base de Datos Limpia
 A partir de la base de datos limpia y mediante la construcción de tablas dinámicas (pivot tables), es posible responder múltiples interrogantes periodísticos y analíticos:

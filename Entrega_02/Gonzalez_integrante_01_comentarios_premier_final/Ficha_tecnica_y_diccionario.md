@@ -1,5 +1,5 @@
-#FICHA TÉCNICA Y DICCIONARIO DE DATOS
-##FICHA TÉCNICA
+# FICHA TÉCNICA Y DICCIONARIO DE DATOS
+## FICHA TÉCNICA
 Fuente de los datos:
 Secciones de comentarios públicas en publicaciones oficiales de Instagram correspondientes a seis partidos de la Premier League.
 Metodología de la construcción de la base:
@@ -13,5 +13,5 @@ Datos cualitativos en lenguaje natural (comentarios multilingües, mayoritariame
 Otras observaciones sobre la base:
 Se conserva la integridad original del texto del usuario en la variable Comentario_Limpio (incluyendo emojis y símbolos) para evitar pérdida de contexto sintáctico durante un posterior análisis de sentimientos.
 Los datos crudos sin filtrar se encuentran disponibles en el archivo de respaldo Libro3.xlsx dentro del repositorio para garantizar la transparencia y replicabilidad del proceso.
-##DICCIONARIO DE DATOS
+## DICCIONARIO DE DATOS
 Hay 4 tipos de variables en la base de datos dada, la primea es: ID_Comentario, que es un Identificador único secuencial para cada registro de comentario que va en los valores de 1 a 905. Luego la variable 2 es el Equipo de Premier que se analizó su publicación, las cuales están divididos con la variable 3, que son los partidos respectivos. Por último, está la variable 4 que es el comentario en sí, tal como se puso en la publicación. Además, la variable 5, pone si es que se alude a algún jugador o otro.
