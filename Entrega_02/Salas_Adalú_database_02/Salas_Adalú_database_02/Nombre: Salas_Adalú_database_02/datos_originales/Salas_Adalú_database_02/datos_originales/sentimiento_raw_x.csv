@@ -1,0 +1,4 @@
+Tweet_ID,User_Comment,Player_Ref,Sentiment_Score
+101,"Haaland is a monster today",Erling Haaland,0.85
+102,"Jackson missed an open goal again",Nicolas Jackson,-0.75
+103,"Hojlund needs more service",Rasmus Hojlund,-0.20
