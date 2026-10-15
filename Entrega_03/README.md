@@ -6,10 +6,10 @@ En el fútbol contemporáneo, la figura del delantero centro vive atrapada en un
 ---
 ## 2. Preguntas de investigación actuales
 * ¿De qué manera la etiqueta previa del jugador (joven promesa, megacrack consolidado o jugador de rendimiento discreto) condiciona el tono, la tolerancia y el sesgo de los comentarios en Instagram?
-* ¿Influye dicha persepción colectiva del jugador, tanto en su desempeño, como en el tiempo de juego que le otorga el cuerpo técnico dentro del campo?
+* ¿Influye dicha percepción colectiva del jugador, tanto en su desempeño, como en el tiempo de juego que le otorga el cuerpo técnico dentro del campo?
 * ¿Cómo se manifiesta la "condena por el éxito" en los delanteros de élite frente a la sobrevaloración de destellos aislados en futbolistas con expectativas más bajas?
 * ¿Qué otros factores emocionales y cognitivos externos al juego puro alteran la métrica de aprobación digital en las comunidades de los clubes del Big Six?
-* ¿Con los comentarios y estás asimetricas tolerancias en los jugadores, se crea una narrativa distinta de la realidad para aquellos que no han visto los partidos?
+* ¿Con los comentarios y estas asimétricas tolerancias en los jugadores, se crea una narrativa distinta de la realidad para aquellos que no han visto los partidos?
 * ¿Cuánto cambia la percepción sobre un jugador cuando existe la presencia de un gol en dicho partido?
 
 ---
