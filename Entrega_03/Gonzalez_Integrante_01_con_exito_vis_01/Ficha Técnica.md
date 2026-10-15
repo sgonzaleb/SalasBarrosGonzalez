@@ -1,0 +1,4 @@
+# **Ficha Técnica de la Base de Datos**
+
+Esta base de datos recopila información sobre el rendimiento deportivo en cancha y el impacto digital en Instagram para jugadores destacados de la Premier League, incluyendo figuras como Erling Haaland y Rayan Aït-Nouri. Los datos abarcan registros estadísticos de la temporada y métricas de conversación en redes sociales. Entre las variables incorporadas se encuentran el nombre del jugador, el equipo al que pertenece, la nota en cancha (calificación del desempeño deportivo en una escala de 1 a 10\) y las menciones en Instagram (índice o volumen de interacciones digitales). Como observación general, la base de datos permite evidenciar cómo la excelencia sostenida genera un estándar donde únicamente los rendimientos inesperados provocan verdaderos picos de conversación en plataformas digitales.
+
