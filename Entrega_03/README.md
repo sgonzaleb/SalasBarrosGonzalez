@@ -10,6 +10,7 @@ La evaluación del rendimiento de los delanteros en redes sociales por parte de 
 * ¿Influye dicha persepción colectiva del jugador, tanto en su desempeño, como en el tiempo de juego que le otorga el cuerpo técnico dentro del campo?
 * ¿Cómo se manifiesta la "condena por el éxito" en los delanteros de élite frente a la sobrevaloración de destellos aislados en futbolistas con expectativas más bajas?
 * ¿Qué otros factores emocionales y cognitivos externos al juego puro alteran la métrica de aprobación digital en las comunidades de los clubes del Big Six?
+* ¿Con los comentarios y estás asimetricas tolerancias en los jugadores, se crea una narrativa distinta de la realidad para aquellos que no han visto los partidos?
 
 ---
 
