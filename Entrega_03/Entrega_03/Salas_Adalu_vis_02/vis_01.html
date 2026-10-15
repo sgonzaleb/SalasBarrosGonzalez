@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-2cdeab4e259310e80069a4c2b3fabd0d"}, "mark": {"type": "circle", "size": 120}, "encoding": {"color": {"field": "clasificacion_sentimiento", "scale": {"domain": ["Positivo", "Neutro", "Negativo"], "range": ["#2ecc71", "#f39c12", "#e74c3c"]}, "title": "Sentimiento Dominante", "type": "nominal"}, "size": {"field": "total_comentarios", "title": "Volumen de Comentarios", "type": "quantitative"}, "tooltip": [{"field": "delantero_nombre", "title": "Jugador", "type": "nominal"}, {"field": "club_nombre", "title": "Club", "type": "nominal"}, {"field": "goles", "title": "Goles Anotados", "type": "quantitative"}, {"field": "xg_partido", "title": "xG Partido", "type": "quantitative"}, {"field": "eficiencia_xg", "title": "Eficiencia xG", "type": "quantitative"}, {"field": "porcentaje_aprobacion", "title": "% Aprobaci\u00f3n", "type": "quantitative"}], "x": {"field": "eficiencia_xg", "title": "Eficiencia xG (Goles - xG Esperados)", "type": "quantitative"}, "y": {"field": "porcentaje_aprobacion", "scale": {"domain": [0, 100]}, "title": "Aprobaci\u00f3n en Redes Sociales (%)", "type": "quantitative"}}, "height": 400, "params": [{"name": "param_2", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "La Brecha del 9: Eficiencia xG vs. Sentimiento del Hincha en Redes", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-2cdeab4e259310e80069a4c2b3fabd0d": [{"id_registro": 1, "fecha_partido": "2026-08-22", "delantero_nombre": "Erling Haaland", "club_nombre": "Man City", "minutos_jugados": 90, "goles": 2, "xg_partido": 1.85, "eficiencia_xg": 0.15, "total_comentarios": 1500, "clasificacion_sentimiento": "Positivo", "porcentaje_aprobacion": 88.5}, {"id_registro": 2, "fecha_partido": "2026-08-22", "delantero_nombre": "Nicolas Jackson", "club_nombre": "Chelsea", "minutos_jugados": 75, "goles": 0, "xg_partido": 0.82, "eficiencia_xg": -0.82, "total_comentarios": 2100, "clasificacion_sentimiento": "Negativo", "porcentaje_aprobacion": 24.0}, {"id_registro": 3, "fecha_partido": "2026-08-23", "delantero_nombre": "Rasmus H\u00f8jlund", "club_nombre": "Man United", "minutos_jugados": 65, "goles": 0, "xg_partido": 0.3, "eficiencia_xg": -0.3, "total_comentarios": 1800, "clasificacion_sentimiento": "Negativo", "porcentaje_aprobacion": 31.5}, {"id_registro": 4, "fecha_partido": "2026-08-23", "delantero_nombre": "Darwin N\u00fa\u00f1ez", "club_nombre": "Liverpool", "minutos_jugados": 80, "goles": 1, "xg_partido": 1.1, "eficiencia_xg": -0.1, "total_comentarios": 1950, "clasificacion_sentimiento": "Positivo", "porcentaje_aprobacion": 62.0}, {"id_registro": 5, "fecha_partido": "2026-08-24", "delantero_nombre": "Kai Havertz", "club_nombre": "Arsenal", "minutos_jugados": 90, "goles": 1, "xg_partido": 0.65, "eficiencia_xg": 0.35, "total_comentarios": 1400, "clasificacion_sentimiento": "Positivo", "porcentaje_aprobacion": 75.0}, {"id_registro": 6, "fecha_partido": "2026-08-24", "delantero_nombre": "Dominic Solanke", "club_nombre": "Tottenham", "minutos_jugados": 85, "goles": 0, "xg_partido": 0.4, "eficiencia_xg": -0.4, "total_comentarios": 950, "clasificacion_sentimiento": "Neutro", "porcentaje_aprobacion": 48.0}, {"id_registro": 7, "fecha_partido": "2026-08-29", "delantero_nombre": "Erling Haaland", "club_nombre": "Man City", "minutos_jugados": 90, "goles": 3, "xg_partido": 2.1, "eficiencia_xg": 0.9, "total_comentarios": 3200, "clasificacion_sentimiento": "Positivo", "porcentaje_aprobacion": 94.0}, {"id_registro": 8, "fecha_partido": "2026-08-29", "delantero_nombre": "Nicolas Jackson", "club_nombre": "Chelsea", "minutos_jugados": 90, "goles": 1, "xg_partido": 0.95, "eficiencia_xg": 0.05, "total_comentarios": 1100, "clasificacion_sentimiento": "Positivo", "porcentaje_aprobacion": 68.0}, {"id_registro": 9, "fecha_partido": "2026-08-30", "delantero_nombre": "Joshua Zirkzee", "club_nombre": "Man United", "minutos_jugados": 70, "goles": 1, "xg_partido": 0.7, "eficiencia_xg": 0.3, "total_comentarios": 1600, "clasificacion_sentimiento": "Positivo", "porcentaje_aprobacion": 71.0}, {"id_registro": 10, "fecha_partido": "2026-08-30", "delantero_nombre": "Diogo Jota", "club_nombre": "Liverpool", "minutos_jugados": 75, "goles": 0, "xg_partido": 0.25, "eficiencia_xg": -0.25, "total_comentarios": 850, "clasificacion_sentimiento": "Neutro", "porcentaje_aprobacion": 52.0}, {"id_registro": 11, "fecha_partido": "2026-08-31", "delantero_nombre": "Gabriel Jesus", "club_nombre": "Arsenal", "minutos_jugados": 60, "goles": 0, "xg_partido": 0.5, "eficiencia_xg": -0.5, "total_comentarios": 1300, "clasificacion_sentimiento": "Negativo", "porcentaje_aprobacion": 38.0}, {"id_registro": 12, "fecha_partido": "2026-08-31", "delantero_nombre": "Richarlison", "club_nombre": "Tottenham", "minutos_jugados": 45, "goles": 0, "xg_partido": 0.15, "eficiencia_xg": -0.15, "total_comentarios": 1050, "clasificacion_sentimiento": "Negativo", "porcentaje_aprobacion": 29.0}, {"id_registro": 13, "fecha_partido": "2026-09-12", "delantero_nombre": "Omar Marmoush", "club_nombre": "Man City", "minutos_jugados": 60, "goles": 0, "xg_partido": 0.2, "eficiencia_xg": -0.2, "total_comentarios": 780, "clasificacion_sentimiento": "Neutro", "porcentaje_aprobacion": 50.0}, {"id_registro": 14, "fecha_partido": "2026-09-12", "delantero_nombre": "Christopher Nkunku", "club_nombre": "Chelsea", "minutos_jugados": 80, "goles": 1, "xg_partido": 0.6, "eficiencia_xg": 0.4, "total_comentarios": 1250, "clasificacion_sentimiento": "Positivo", "porcentaje_aprobacion": 79.0}, {"id_registro": 15, "fecha_partido": "2026-09-13", "delantero_nombre": "Cody Gakpo", "club_nombre": "Liverpool", "minutos_jugados": 90, "goles": 1, "xg_partido": 0.85, "eficiencia_xg": 0.15, "total_comentarios": 1100, "clasificacion_sentimiento": "Positivo", "porcentaje_aprobacion": 73.0}, {"id_registro": 16, "fecha_partido": "2026-09-13", "delantero_nombre": "Chido Obi-Martin", "club_nombre": "Man United", "minutos_jugados": 30, "goles": 0, "xg_partido": 0.1, "eficiencia_xg": -0.1, "total_comentarios": 900, "clasificacion_sentimiento": "Neutro", "porcentaje_aprobacion": 55.0}, {"id_registro": 17, "fecha_partido": "2026-09-14", "delantero_nombre": "Viktor Gy\u00f6keres", "club_nombre": "Arsenal", "minutos_jugados": 90, "goles": 2, "xg_partido": 1.5, "eficiencia_xg": 0.5, "total_comentarios": 2800, "clasificacion_sentimiento": "Positivo", "porcentaje_aprobacion": 91.0}, {"id_registro": 18, "fecha_partido": "2026-09-14", "delantero_nombre": "Dominic Solanke", "club_nombre": "Tottenham", "minutos_jugados": 90, "goles": 1, "xg_partido": 0.75, "eficiencia_xg": 0.25, "total_comentarios": 1200, "clasificacion_sentimiento": "Positivo", "porcentaje_aprobacion": 69.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
