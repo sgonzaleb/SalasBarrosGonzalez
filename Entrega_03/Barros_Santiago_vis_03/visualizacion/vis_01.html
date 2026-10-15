@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar", "cornerRadiusBottomRight": 5, "cornerRadiusTopRight": 5}, "encoding": {"color": {"field": "Tipo", "scale": {"domain": ["Promesa / Juvenil", "Consagrado / Primer Equipo"], "range": ["#27ae60", "#c0392b"]}, "title": "Categor\u00eda del atacante", "type": "nominal"}, "tooltip": [{"field": "Jugador", "title": "Jugador", "type": "nominal"}, {"field": "Equipo", "title": "Club", "type": "nominal"}, {"field": "Tipo", "title": "Categor\u00eda", "type": "nominal"}, {"field": "Porcentaje_Aprobacion", "title": "Aprobaci\u00f3n (%)", "type": "quantitative"}, {"field": "Tono_Predominante", "title": "Tono en comentarios", "type": "nominal"}, {"field": "Total_Menciones", "title": "Menciones analizadas", "type": "quantitative"}], "x": {"field": "Porcentaje_Aprobacion", "scale": {"domain": [0, 115]}, "title": "Tolerancia y Aprobaci\u00f3n del Hincha (%)", "type": "quantitative"}, "y": {"field": "Jugador", "sort": "-x", "title": "Atacante / Referente evaluado", "type": "nominal"}}, "title": {"text": ["El doble rasero en ataque: La ceguera hacia las promesas vs el juicio al consagrado"], "subtitle": ["Porcentaje de respaldo y tolerancia en comentarios de Instagram en partidos del Big Six", "Muestra: Comentarios de Liverpool, Manchester City y Manchester United"], "fontSize": 14, "subtitleFontSize": 11}}, {"mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 6, "fontSize": 11, "fontWeight": "bold"}, "encoding": {"color": {"field": "Tipo", "scale": {"domain": ["Promesa / Juvenil", "Consagrado / Primer Equipo"], "range": ["#27ae60", "#c0392b"]}, "title": "Categor\u00eda del atacante", "type": "nominal"}, "text": {"field": "Porcentaje_Aprobacion", "format": ".0f", "type": "quantitative"}, "tooltip": [{"field": "Jugador", "title": "Jugador", "type": "nominal"}, {"field": "Equipo", "title": "Club", "type": "nominal"}, {"field": "Tipo", "title": "Categor\u00eda", "type": "nominal"}, {"field": "Porcentaje_Aprobacion", "title": "Aprobaci\u00f3n (%)", "type": "quantitative"}, {"field": "Tono_Predominante", "title": "Tono en comentarios", "type": "nominal"}, {"field": "Total_Menciones", "title": "Menciones analizadas", "type": "quantitative"}], "x": {"field": "Porcentaje_Aprobacion", "scale": {"domain": [0, 115]}, "title": "Tolerancia y Aprobaci\u00f3n del Hincha (%)", "type": "quantitative"}, "y": {"field": "Jugador", "sort": "-x", "title": "Atacante / Referente evaluado", "type": "nominal"}}, "title": {"text": ["El doble rasero en ataque: La ceguera hacia las promesas vs el juicio al consagrado"], "subtitle": ["Porcentaje de respaldo y tolerancia en comentarios de Instagram en partidos del Big Six", "Muestra: Comentarios de Liverpool, Manchester City y Manchester United"], "fontSize": 14, "subtitleFontSize": 11}}], "data": {"name": "data-05d6a32a9799867dee4a0033333519c4"}, "height": 260, "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-05d6a32a9799867dee4a0033333519c4": [{"Jugador": "Floyd Samba (17 a\u00f1os)", "Tipo": "Promesa / Juvenil", "Equipo": "Manchester City", "Total_Menciones": 11, "Tono_Predominante": "Respaldo e Ilusi\u00f3n (100%)", "Porcentaje_Aprobacion": 100}, {"Jugador": "Juveniles Sub-21", "Tipo": "Promesa / Juvenil", "Equipo": "Manchester United", "Total_Menciones": 14, "Tono_Predominante": "Respaldo e Ilusi\u00f3n (93%)", "Porcentaje_Aprobacion": 93}, {"Jugador": "Cody Gakpo", "Tipo": "Consagrado / Primer Equipo", "Equipo": "Liverpool", "Total_Menciones": 10, "Tono_Predominante": "Resistencia / Disculpas tard\u00edas (70%)", "Porcentaje_Aprobacion": 30}, {"Jugador": "Joshua Zirkzee", "Tipo": "Consagrado / Primer Equipo", "Equipo": "Manchester United", "Total_Menciones": 8, "Tono_Predominante": "Cr\u00edtica e Impaciencia (88%)", "Porcentaje_Aprobacion": 12}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
