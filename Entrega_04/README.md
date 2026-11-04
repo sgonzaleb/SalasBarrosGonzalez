@@ -1,7 +1,7 @@
 # Documentación Entrega 04: Proyecto Webstory - Delanteros de la Premier League
 
 ## 1. Introducción y Propuesta de la Webstory
-Nuestro proyecto analiza la brecha entre el rendimiento técnico de los delanteros del *Big Six* de la Premier League (medido mediante Goles Esperados o *xG*) y el veredicto emocional de los hinchas en redes sociales. 
+Nuestro proyecto analiza la brecha entre el rendimiento técnico de los delanteros del *Big Six* de la Premier League (medido mediante Goles Esperados o *xG*) y el veredicto emocional de los hinchas en redes sociales.
 
 ## 2. Actualización de Hipótesis y Respuesta al Feedback del Profesor
 * **Hipótesis actualizada:** La percepción de los aficionados no responde linealmente al volumen de oportunidades generadas, sino que opera bajo la polarización emocional post-partido. Integrando nuestras bases de datos, ahora logramos cruzar de forma directa la performance métrica individual con el ratio de comentarios positivos y negativos de las hinchadas. Esto nos permite identificar a qué jugadores los fanáticos atribuyen la responsabilidad de victorias y derrotas, evaluando si la eficiencia real afecta o no el volumen de aprobación.
