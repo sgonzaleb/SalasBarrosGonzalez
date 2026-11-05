@@ -1,5 +1,5 @@
 # Tema
-Identidad Visual: El Fenómeno del 9 Realidad Vs Percepción (Premier League)
+Identidad Visual: El Fenómeno del 9: Realidad Vs Percepción (Premier League)
 
 # Descripción
 En esta entrega hice la presentación de la propuesta visual, paleta de colores y directrices gráficas para el proyecto del análisis de los delanteros en la Premier League. Algunos sirven solamente de guías, ya que no aplique los datos reales, sino la estructura y gráficos comparativos por ejemplo que podrían haber.
