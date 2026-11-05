@@ -1,0 +1,114 @@
+import pandas as pd
+import altair as alt
+import base64
+
+# Función para codificar las 3 imágenes a Base64 sin fallas
+def get_base64_img(file_path):
+    try:
+        with open(file_path, "rb") as image_file:
+            encoded = base64.b64encode(image_file.read()).decode('utf-8')
+            return f"data:image/png;base64,{encoded}"
+    except Exception as e:
+        return "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Soccer_ball_FC.svg/120px-Soccer_ball_FC.svg.png"
+
+# 1. Cargar las 3 imágenes
+img_haaland = get_base64_img('haaland.png')
+img_mainoo = get_base64_img('mainoo.png')
+img_ait_nouri = get_base64_img('ait_nouri.png')
+
+# 2. Dataset corregido
+data_jugadores = pd.DataFrame([
+    {
+        'Jugador': 'Erling Haaland',
+        'Equipo': 'Manchester City',
+        'Menciones_Redes': 3.0,
+        'Nota_Cancha': 7.5,
+        'Foto': img_haaland
+    },
+    {
+        'Jugador': 'Kobbie Mainoo',
+        'Equipo': 'Manchester United',
+        'Menciones_Redes': 4.0,
+        'Nota_Cancha': 6.1,
+        'Foto': img_mainoo
+    },
+    {
+        'Jugador': 'Rayan Aït-Nouri',
+        'Equipo': 'Manchester City',
+        'Menciones_Redes': 9.0,
+        'Nota_Cancha': 8.8,
+        'Foto': img_ait_nouri
+    }
+])
+
+# 3. CAPA 1: Barra Sombra de fondo (nace desde la base hasta la Nota en Cancha)
+barra_sombra = alt.Chart(data_jugadores).mark_bar(
+    width=65,
+    color='#d9d9d9',
+    opacity=0.35,
+    cornerRadiusTopLeft=8,
+    cornerRadiusTopRight=8
+).encode(
+    x=alt.X('Jugador:N', title='Jugadores Analizados', axis=alt.Axis(labelAngle=0, labelFontSize=13, titleFontSize=14)),
+    y=alt.Y('Nota_Cancha:Q', title='Escala Comparativa (0 - 10)', scale=alt.Scale(domain=[0, 10.5])),
+    tooltip=[
+        alt.Tooltip('Jugador:N', title='Jugador'),
+        alt.Tooltip('Equipo:N', title='Club'),
+        alt.Tooltip('Nota_Cancha:Q', title='Nota Real en Cancha (1-10)')
+    ]
+)
+
+# CAPA 2: Figura Sombra en la cima de la barra de Rendimiento
+figura_sombra = alt.Chart(data_jugadores).mark_image(
+    width=90,
+    height=90,
+    opacity=0.3
+).encode(
+    x='Jugador:N',
+    y='Nota_Cancha:Q',
+    url='Foto:N'
+)
+
+# 4. CAPA 3: Barra de Color al frente (nace desde la base hasta las Menciones en Redes)
+barra_color = alt.Chart(data_jugadores).mark_bar(
+    width=35,
+    color='#6CABDD',
+    opacity=0.85,
+    cornerRadiusTopLeft=5,
+    cornerRadiusTopRight=5
+).encode(
+    x='Jugador:N',
+    y='Menciones_Redes:Q',
+    tooltip=[
+        alt.Tooltip('Jugador:N', title='Jugador'),
+        alt.Tooltip('Menciones_Redes:Q', title='Menciones en Instagram')
+    ]
+)
+
+# CAPA 4: Figura en Color Real brillante en la cima de la barra de Menciones
+figura_color = alt.Chart(data_jugadores).mark_image(
+    width=70,
+    height=70,
+    opacity=1.0
+).encode(
+    x='Jugador:N',
+    y='Menciones_Redes:Q',
+    url='Foto:N'
+)
+
+# 5. Unir todas las capas
+grafico_final = (barra_sombra + figura_sombra + barra_color + figura_color).properties(
+    title={
+        "text": ["Cancha vs. Instagram: Rendimiento Real vs. Impacto en Redes"],
+        "subtitle": ["Sombra Gris (Atrás) = Nota real en cancha (1-10) | Barra Azul (Frente) = Menciones en comentarios de Instagram"],
+        "fontSize": 16,
+        "subtitleFontSize": 12,
+        "anchor": "start"
+    },
+    width=650,
+    height=500
+).configure_axis(
+    gridOpacity=0.4
+)
+
+grafico_final
