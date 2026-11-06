@@ -12,5 +12,5 @@ En esta entrega hice la presentación de la propuesta visual, paleta de colores 
 # Archivos
 * **Documento principal:** PDF con la identidad visual (`Identidad_Visual_01.pdf`).
 
-#Link 
+# Link 
 Por último en mi parte individual, cree el link para una página web en donde se pudiera ver mi crónica en formato html. Link: https://sach95.github.io/Pagina-web/
