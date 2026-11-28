@@ -3,22 +3,1569 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lienzo Blanco</title>
-    <meta name="description" content="Página en blanco desplazable para pegar y previsualizar ideas de código." />
-    <meta property="og:title" content="Lienzo Blanco" />
-    <meta property="og:description" content="Página en blanco desplazable para pegar y previsualizar ideas de código." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <title>el 9 en instagram — ¿Rendimiento o competencia de popularidad?</title>
+    <meta
+      name="description"
+      content="Crónica visual interactiva sobre delanteros centro, Expected Goals (xG) y el veredicto emocional de las redes sociales."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html,
+      body {
+        background-color: #1B3B2B;
+        color: #F4F6F5;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      .reading-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        z-index: 50;
+        border: none;
+        appearance: none;
+        -webkit-appearance: none;
+        background-color: rgba(19, 42, 31, 0.75);
+        pointer-events: none;
+      }
+
+      .reading-progress::-webkit-progress-bar {
+        background-color: rgba(19, 42, 31, 0.75);
+      }
+
+      .reading-progress::-webkit-progress-value {
+        background-color: #D4AF37;
+        transition: width 80ms linear;
+      }
+
+      .reading-progress::-moz-progress-bar {
+        background-color: #D4AF37;
+      }
+
+      .mono-btn {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: transform 0.2s ease;
+      }
+
+      .mono-btn:hover {
+        transform: scale(1.06);
+      }
+
+      .mono-btn.hop {
+        animation: hopMono 0.4s ease;
+      }
+
+      .head-top {
+        transform-origin: 60px 52px;
+        animation: idleTalk 1.8s infinite alternate ease-in-out;
+      }
+
+      @keyframes idleTalk {
+        0%,
+        70% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        85% {
+          transform: translateY(-4px) rotate(-2deg);
+        }
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+      }
+
+      @keyframes hopMono {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-14px);
+        }
+      }
+
+      .guru-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        max-width: 250px;
+        text-align: center;
+      }
+
+      .guru-bubble {
+        background: #ffffff;
+        color: #0f172a;
+        border: 2px solid #D9383A;
+        border-radius: 14px;
+        padding: 10px 14px;
+        font-size: 0.86rem;
+        font-weight: 600;
+        line-height: 1.4;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+        position: relative;
+      }
+
+      .guru-bubble::after {
+        content: "";
+        position: absolute;
+        bottom: -9px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 9px 9px 0;
+        border-style: solid;
+        border-color: #D9383A transparent transparent;
+      }
+
+      .guru-btn {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: transform 0.2s ease;
+      }
+
+      .guru-btn:hover {
+        transform: scale(1.05);
+      }
+
+      .guru-btn.hop {
+        animation: guruHop 0.4s ease;
+      }
+
+      .guru-head-top {
+        transform-origin: 70px 63px;
+        animation: guruTalk 2s infinite alternate ease-in-out;
+      }
+
+      @keyframes guruTalk {
+        0%,
+        70% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        85% {
+          transform: translateY(-4px) rotate(-1.5deg);
+        }
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+      }
+
+      @keyframes guruHop {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .head-top,
+        .mono-btn.hop,
+        .guru-head-top,
+        .guru-btn.hop {
+          animation: none;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="min-h-screen w-full bg-[#1B3B2B] font-['Roboto',sans-serif] text-[#F4F6F5]">
+      <progress
+        id="reading-progress"
+        value="0"
+        max="100"
+        aria-label="Progreso de lectura"
+        class="reading-progress"
+      ></progress>
+
+      <main class="mx-auto max-w-[920px] px-6 py-14 sm:px-10 sm:py-16 space-y-16 sm:space-y-20">
+        <!-- Título principal y subtítulo -->
+        <header class="text-center">
+          <h1 class="font-['Bebas_Neue',sans-serif] text-5xl sm:text-6xl font-normal tracking-[0.06em] text-[#F4F6F5] text-balance">
+            el 9 en instagram
+          </h1>
+          <p class="mt-2 font-['Bebas_Neue',sans-serif] text-xl sm:text-2xl tracking-[0.05em] text-[#D4AF37] text-balance">
+            ¿Rendimiento o competencia de popularidad?
+          </p>
+        </header>
+
+        <!-- 1. Mono: Copa Instagram -->
+        <section class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
+          <div
+            class="monito-widget flex items-start justify-center"
+            data-speech='["Esta es la Copa Instagram. Y, aunque no lo digan, es la más deseada por todos los jugadores.","Cancherear se ha vuelto un deporte dentro del deporte, todos quieren más likes, todos quieren más seguidores, más cariño, y más y más.","Pero, ¿ganarla te asegura ser un crack? o ¿solo eres un fantasma carismático?"]'
+          >
+            <div
+              class="monito-bubble relative w-[245px] sm:w-[295px] min-h-[112px] px-4 py-3 text-[13px] font-medium leading-snug flex flex-col justify-center rounded-[24px] border-2 border-[#6cabdd] bg-white font-['Roboto',sans-serif] text-slate-900 shadow-lg -mr-2 sm:-mr-3 cursor-pointer select-none"
+              aria-live="polite"
+            >
+              <p class="monito-text transition-opacity duration-200 opacity-100">
+                Esta es la Copa Instagram. Y, aunque no lo digan, es la más deseada por todos los jugadores.
+              </p>
+              <span class="monito-counter mt-1.5 self-end text-[11px] font-normal tabular-nums text-slate-400">
+                1/3
+              </span>
+              <svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="pointer-events-none absolute -bottom-[24px] right-5">
+                <path d="M 2 0 L 18 0 L 18 3 L 2 3 Z" fill="#ffffff" />
+                <path d="M 2 1 C 9 11 20 18 31 24 C 22 15 18 7 18 1" fill="#ffffff" stroke="#6cabdd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <button
+              type="button"
+              title="Haz clic en el monito"
+              aria-label="Monito azul con el 9 presentando la Copa Instagram"
+              class="mono-btn shrink-0 mt-5 font-['Roboto',sans-serif] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37] rounded-xl"
+            >
+              <svg width="115" height="150" viewBox="0 0 120 155" xmlns="http://www.w3.org/2000/svg">
+                <line x1="34" y1="88" x2="10" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                <line x1="86" y1="88" x2="110" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                <ellipse cx="60" cy="112" rx="30" ry="38" fill="#6cabdd" />
+                <text x="60" y="118" text-anchor="middle" font-size="20" font-weight="800" fill="#0b101b">9</text>
+                <path d="M 44 54 L 76 54 L 72 68 Q 60 73 48 68 Z" fill="#f1c27d" />
+                <g class="head-top">
+                  <path d="M 42 50 L 78 50 L 76 26 Q 60 17 44 26 Z" fill="#f1c27d" />
+                  <path d="M 42 30 Q 60 12 78 30 Q 72 22 60 22 Q 48 22 42 30 Z" fill="#facc15" />
+                  <circle cx="53" cy="38" r="2.6" fill="#0f172a" />
+                  <circle cx="67" cy="38" r="2.6" fill="#0f172a" />
+                </g>
+              </svg>
+            </button>
+          </div>
+          <img
+            src="assets/aistudio/Code_Generated_Image_29bed7c1.png"
+            alt="Copa Instagram"
+            class="w-[125px] sm:w-[145px] h-auto shrink-0 drop-shadow-[0_6px_18px_rgba(250,204,21,0.18)]"
+          />
+        </section>
+
+        <!-- Foto de tres cabezas de los jugadores -->
+        <section class="flex justify-center">
+          <div class="w-full max-w-[540px] rounded-[12px] border border-[#D4AF37]/55 border-t-[3px] border-t-[#D4AF37] bg-[#132A1F] p-5 sm:p-6 shadow-xl">
+            <img
+              src="assets/aistudio/collage_delanteros_transparent.png"
+              alt="Tres delanteros de la Premier League: Kai Havertz, Alexander Isak y Erling Haaland"
+              class="w-full h-auto block drop-shadow-[0_10px_22px_rgba(0,0,0,0.45)]"
+            />
+            <div class="mt-5 grid grid-cols-3 gap-2 border-t border-[rgba(244,246,245,0.12)] pt-4 text-center">
+              <div class="rounded-lg border border-[rgba(244,246,245,0.12)] bg-[#1B3B2B]/80 px-2 py-2">
+                <div class="font-['Bebas_Neue',sans-serif] text-base leading-tight tracking-[0.03em] text-[#F4F6F5]">Kai Havertz</div>
+                <div class="mt-0.5 text-xs font-medium text-[#D4AF37]">Arsenal</div>
+              </div>
+              <div class="rounded-lg border border-[rgba(244,246,245,0.12)] bg-[#1B3B2B]/80 px-2 py-2">
+                <div class="font-['Bebas_Neue',sans-serif] text-base leading-tight tracking-[0.03em] text-[#F4F6F5]">Alexander Isak</div>
+                <div class="mt-0.5 text-xs font-medium text-[#D4AF37]">Newcastle</div>
+              </div>
+              <div class="rounded-lg border border-[rgba(244,246,245,0.12)] bg-[#1B3B2B]/80 px-2 py-2">
+                <div class="font-['Bebas_Neue',sans-serif] text-base leading-tight tracking-[0.03em] text-[#F4F6F5]">Erling Haaland</div>
+                <div class="mt-0.5 text-xs font-medium text-[#D4AF37]">Man City</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Mono: Principales delanteros -->
+        <section class="flex justify-center">
+          <div
+            class="monito-widget flex items-start justify-center"
+            data-speech='["Estos son los principales delanteros de la mejor liga del mundo. Se caracterizan por su efectividad dentro del área y sus aportes en goles y asistencias.","Pero, si se miran fríamente, ser unas auténticas bestias y piezas importantes en sus equipos no bastan para tocar la Copa Instagram, sino que los jurados, o “gurús de Tik Tok” tienen otros parámetros."]'
+          >
+            <div
+              class="monito-bubble relative w-[245px] sm:w-[295px] min-h-[112px] px-4 py-3 text-[13px] font-medium leading-snug flex flex-col justify-center rounded-[24px] border-2 border-[#6cabdd] bg-white font-['Roboto',sans-serif] text-slate-900 shadow-lg -mr-2 sm:-mr-3 cursor-pointer select-none"
+              aria-live="polite"
+            >
+              <p class="monito-text transition-opacity duration-200 opacity-100">
+                Estos son los principales delanteros de la mejor liga del mundo. Se caracterizan por su efectividad dentro del área y sus aportes en goles y asistencias.
+              </p>
+              <span class="monito-counter mt-1.5 self-end text-[11px] font-normal tabular-nums text-slate-400">
+                1/2
+              </span>
+              <svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="pointer-events-none absolute -bottom-[24px] right-5">
+                <path d="M 2 0 L 18 0 L 18 3 L 2 3 Z" fill="#ffffff" />
+                <path d="M 2 1 C 9 11 20 18 31 24 C 22 15 18 7 18 1" fill="#ffffff" stroke="#6cabdd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <button
+              type="button"
+              title="Haz clic en el monito"
+              aria-label="Monito azul con el 9 hablando de los principales delanteros"
+              class="mono-btn shrink-0 mt-5 font-['Roboto',sans-serif] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37] rounded-xl"
+            >
+              <svg width="115" height="150" viewBox="0 0 120 155" xmlns="http://www.w3.org/2000/svg">
+                <line x1="34" y1="88" x2="10" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                <line x1="86" y1="88" x2="110" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                <ellipse cx="60" cy="112" rx="30" ry="38" fill="#6cabdd" />
+                <text x="60" y="118" text-anchor="middle" font-size="20" font-weight="800" fill="#0b101b">9</text>
+                <path d="M 44 54 L 76 54 L 72 68 Q 60 73 48 68 Z" fill="#f1c27d" />
+                <g class="head-top">
+                  <path d="M 42 50 L 78 50 L 76 26 Q 60 17 44 26 Z" fill="#f1c27d" />
+                  <path d="M 42 30 Q 60 12 78 30 Q 72 22 60 22 Q 48 22 42 30 Z" fill="#facc15" />
+                  <circle cx="53" cy="38" r="2.6" fill="#0f172a" />
+                  <circle cx="67" cy="38" r="2.6" fill="#0f172a" />
+                </g>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- 3. Crónica: La dictadura del xG -->
+        <article class="space-y-8 font-['Roboto',sans-serif] text-[15.5px] sm:text-base leading-[1.75] text-[#F4F6F5]">
+          <div class="mx-auto max-w-[68ch] space-y-5">
+            <h2 class="font-['Bebas_Neue',sans-serif] text-3xl sm:text-4xl font-normal tracking-[0.04em] text-[#F4F6F5] leading-[1.12] text-balance">
+              La dictadura del xG: Cuando el gol no basta para calmar a las redes
+            </h2>
+            <p>
+              En el fútbol contemporáneo, el delantero centro (&quot;9&quot;) vive atrapado en una doble contabilidad. Por un lado, modelos analíticos como los Expected Goals (xG) miden la probabilidad matemática de que un disparo termine en gol según posición, ángulo y presión defensiva. Por el otro, el tribunal inmediato de las redes sociales sentencia su reputación segundos después del pitazo final.
+            </p>
+            <p>
+              Al cruzar 18 actuaciones representativas de los atacantes del Big Six de la Premier League, aparece una grieta clara entre el rendimiento técnico y el veredicto emocional de los hinchas en X e Instagram.
+            </p>
+
+            <h3 class="pt-4 font-['Bebas_Neue',sans-serif] text-2xl sm:text-[1.65rem] font-normal tracking-[0.04em] text-[#D4AF37] leading-snug text-balance">
+              Los intocables y la tiranía de la expectativa
+            </h3>
+            <p>
+              Erling Haaland y Viktor Gyökeres representan al atacante inmune a la volatilidad digital. Cuando Haaland supera su expectativa de gol —con eficiencias de xG de +0.15 y +0.90—, su aprobación alcanza el 88.5% y 94.0%, impulsada por más de 3.000 comentarios por fecha. Cuando la pelota entra, no hay margen de duda.
+            </p>
+            <p>
+              Lo más revelador ocurre lejos de esa efectividad perfecta. Delanteros como Nicolas Jackson (Chelsea) o Rasmus Højlund (Manchester United) encarnan &quot;La Brecha&quot;. El 22 de agosto, Jackson registró un xG de 0.82 —el modelo predecía casi un gol seguro con las ocasiones que generó—, pero terminó en cero. El castigo digital fue inmediato: apenas un 24.0% de aprobación y más de 2.100 comentarios mayoritariamente negativos.
+            </p>
+          </div>
+
+          <!-- Gráfico 03: Eficiencia xG vs Sentimiento -->
+          <div class="py-1">
+            <div class="mx-auto w-full max-w-[740px] rounded-[12px] border border-[rgba(244,246,245,0.16)] border-t-[3px] border-t-[#D4AF37] bg-[#132A1F] px-5 py-5 text-[#F4F6F5] shadow-xl font-['Roboto',sans-serif]">
+              <div class="mb-1 text-[0.74rem] font-bold uppercase tracking-[0.09em] text-[#D4AF37]">
+                Gráfico 03 · Sesgo de Resultado (18 actuaciones Big Six)
+              </div>
+              <h3 class="mb-1.5 font-['Bebas_Neue',sans-serif] text-[1.65rem] leading-[1.12] tracking-[0.03em] text-[#F4F6F5]">
+                La Brecha del 9: Eficiencia xG vs. Sentimiento del Hincha
+              </h3>
+              <p class="mb-4 text-[0.88rem] leading-snug text-[#C3D0C9]">
+                Eje X: Goles menos Goles Esperados (xG). Eje Y: Aprobación en redes (%). Tamaño: volumen de comentarios.
+                <strong class="font-bold text-[#F4F6F5]">Toca cualquier burbuja:</strong>
+              </p>
+
+              <div id="xg-filters" class="mb-3.5 flex flex-wrap gap-2" role="group" aria-label="Filtrar actuaciones por gol">
+                <button type="button" data-filter="all" aria-pressed="true" class="xg-filter-btn cursor-pointer rounded-[8px] border px-3.5 py-[0.45rem] font-['Bebas_Neue',sans-serif] text-[1rem] leading-none tracking-[0.04em] transition-all duration-200 border-[#D4AF37] bg-[#D4AF37] text-[#132A1F]">
+                  Todos los partidos (18)
+                </button>
+                <button type="button" data-filter="goal" aria-pressed="false" class="xg-filter-btn cursor-pointer rounded-[8px] border px-3.5 py-[0.45rem] font-['Bebas_Neue',sans-serif] text-[1rem] leading-none tracking-[0.04em] transition-all duration-200 border-[rgba(244,246,245,0.16)] bg-[rgba(244,246,245,0.06)] text-[#F4F6F5] hover:border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#132A1F]">
+                  Con Gol (≥ 1 gol)
+                </button>
+                <button type="button" data-filter="nogoal" aria-pressed="false" class="xg-filter-btn cursor-pointer rounded-[8px] border px-3.5 py-[0.45rem] font-['Bebas_Neue',sans-serif] text-[1rem] leading-none tracking-[0.04em] transition-all duration-200 border-[rgba(244,246,245,0.16)] bg-[rgba(244,246,245,0.06)] text-[#F4F6F5] hover:border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#132A1F]">
+                  Sin Gol (0 goles)
+                </button>
+              </div>
+
+              <div class="mb-3 flex flex-wrap gap-4 text-[0.78rem] text-[#C3D0C9]">
+                <span class="inline-flex items-center gap-1.5">
+                  <i class="inline-block h-2.5 w-2.5 rounded-full bg-[#D4AF37]" aria-hidden="true"></i>
+                  Positivo
+                </span>
+                <span class="inline-flex items-center gap-1.5">
+                  <i class="inline-block h-2.5 w-2.5 rounded-full bg-[#E07A2B]" aria-hidden="true"></i>
+                  Neutro
+                </span>
+                <span class="inline-flex items-center gap-1.5">
+                  <i class="inline-block h-2.5 w-2.5 rounded-full bg-[#D9383A]" aria-hidden="true"></i>
+                  Negativo
+                </span>
+              </div>
+
+              <div class="w-full rounded-[10px] bg-[rgba(255,255,255,0.02)] p-1.5">
+                <svg
+                  id="xg-svg"
+                  viewBox="0 0 680 370"
+                  role="img"
+                  aria-label="Gráfico de dispersión eficiencia xG vs aprobación"
+                  class="block h-auto w-full"
+                ></svg>
+              </div>
+
+              <div
+                id="xg-detail"
+                class="mt-3.5 rounded-[8px] border-l-4 border-l-[#D4AF37] bg-[#1B3B2B] px-4 py-3.5 text-[0.88rem] leading-relaxed text-[#C3D0C9]"
+                aria-live="polite"
+              ></div>
+            </div>
+          </div>
+
+          <div class="mx-auto max-w-[68ch] space-y-5">
+            <h3 class="pt-4 font-['Bebas_Neue',sans-serif] text-2xl sm:text-[1.65rem] font-normal tracking-[0.04em] text-[#D4AF37] leading-snug text-balance">
+              El &quot;efecto gol&quot; como amortiguador digital
+            </h3>
+            <p>
+              Mientras la analítica valora el desmarque y la capacidad de generar ocasiones de alto xG, la hinchada opera en modo binario: gol o condena.
+            </p>
+            <p>
+              El caso de Darwin Núñez en Liverpool lo resume. Aunque registró una eficiencia de xG levemente negativa (-0.10), mandar el balón a la red bastó para subir su aprobación al 62.0%. El gol funciona como un escudo mediático que tapa las fallas previas y frena el linchamiento digital.
+            </p>
+            <p>
+              En una Premier League donde los fichajes millonarios disparan la exigencia, las redes no miden la calidad técnica del delantero, sino la frustración o euforia inmediata del hincha.
+            </p>
+          </div>
+
+          <!-- Mini Trivia 1 -->
+          <div class="pt-2">
+            <div id="desafio-1" class="trivia-widget mx-auto w-full max-w-[740px] scroll-mt-10 rounded-[10px] border border-[rgba(244,246,245,0.16)] border-l-4 border-l-[#D4AF37] bg-[#132A1F] px-[1.05rem] py-[0.9rem] font-['Roboto',sans-serif] text-[#F4F6F5] shadow-lg" data-quiz-id="1"></div>
+          </div>
+        </article>
+
+        <!-- 4. Gurú -->
+        <section class="flex justify-center">
+          <div class="guru-box">
+            <div class="guru-bubble cursor-pointer select-none" aria-live="polite">
+              Y es que es obvio el fútbol se gana con goles, que me importa que mi “9” haga mejores diagonales y apoye a la defensa, yo quiero que suba el marcador.
+            </div>
+            <button
+              type="button"
+              title="Haz clic en el gurú"
+              aria-label="Gurú defendiendo los goles en el marcador"
+              class="guru-btn font-['Roboto',sans-serif] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37] rounded-xl"
+            >
+              <svg width="130" height="154" viewBox="0 0 140 165" xmlns="http://www.w3.org/2000/svg">
+                <line x1="40" y1="98" x2="14" y2="86" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                <line x1="100" y1="98" x2="126" y2="86" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                <ellipse cx="70" cy="122" rx="32" ry="38" fill="#9333ea" />
+                <text x="70" y="128" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">@</text>
+                <path d="M 52 65 L 88 65 L 84 79 Q 70 84 56 79 Z" fill="#f1c27d" />
+                <g class="guru-head-top">
+                  <path d="M 50 61 L 90 61 L 88 37 Q 70 28 52 37 Z" fill="#f1c27d" />
+                  <path d="M 48 40 Q 70 16 92 40 Q 84 28 70 28 Q 56 28 48 40 Z" fill="#7e22ce" />
+                  <circle cx="70" cy="27" r="4" fill="#facc15" />
+                  <circle cx="62" cy="48" r="5" fill="none" stroke="#0f172a" stroke-width="2" />
+                  <circle cx="78" cy="48" r="5" fill="none" stroke="#0f172a" stroke-width="2" />
+                  <line x1="67" y1="48" x2="73" y2="48" stroke="#0f172a" stroke-width="2" />
+                  <circle cx="62" cy="48" r="2" fill="#0f172a" />
+                  <circle cx="78" cy="48" r="2" fill="#0f172a" />
+                </g>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- 5. Diálogo: Mono -> Gurú -> Mono -->
+        <section class="mx-auto max-w-[760px] flex flex-col gap-10">
+          <div class="flex justify-start">
+            <div
+              class="monito-widget flex items-start justify-center"
+              data-speech='["Aquí, el Noruego comenzó con ventaja. Su asombrosa cantidad de goles lo blinda de las críticas, un escudo anti gurús por su eficacia. Pero…"]'
+            >
+              <div
+                class="monito-bubble relative w-[245px] sm:w-[295px] min-h-[82px] px-4 py-3 text-[13px] font-medium leading-snug flex flex-col justify-center rounded-[24px] border-2 border-[#6cabdd] bg-white font-['Roboto',sans-serif] text-slate-900 shadow-lg -mr-2 sm:-mr-3 cursor-pointer select-none"
+                aria-live="polite"
+              >
+                <p class="monito-text transition-opacity duration-200 opacity-100">
+                  Aquí, el Noruego comenzó con ventaja. Su asombrosa cantidad de goles lo blinda de las críticas, un escudo anti gurús por su eficacia. Pero…
+                </p>
+                <svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="pointer-events-none absolute -bottom-[24px] right-5">
+                  <path d="M 2 0 L 18 0 L 18 3 L 2 3 Z" fill="#ffffff" />
+                  <path d="M 2 1 C 9 11 20 18 31 24 C 22 15 18 7 18 1" fill="#ffffff" stroke="#6cabdd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <button
+                type="button"
+                title="Haz clic en el monito"
+                aria-label="Monito azul sobre la ventaja inicial de Haaland"
+                class="mono-btn shrink-0 mt-5 font-['Roboto',sans-serif] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37] rounded-xl"
+              >
+                <svg width="115" height="150" viewBox="0 0 120 155" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="34" y1="88" x2="10" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                  <line x1="86" y1="88" x2="110" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                  <ellipse cx="60" cy="112" rx="30" ry="38" fill="#6cabdd" />
+                  <text x="60" y="118" text-anchor="middle" font-size="20" font-weight="800" fill="#0b101b">9</text>
+                  <path d="M 44 54 L 76 54 L 72 68 Q 60 73 48 68 Z" fill="#f1c27d" />
+                  <g class="head-top">
+                    <path d="M 42 50 L 78 50 L 76 26 Q 60 17 44 26 Z" fill="#f1c27d" />
+                    <path d="M 42 30 Q 60 12 78 30 Q 72 22 60 22 Q 48 22 42 30 Z" fill="#facc15" />
+                    <circle cx="53" cy="38" r="2.6" fill="#0f172a" />
+                    <circle cx="67" cy="38" r="2.6" fill="#0f172a" />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <div class="guru-box">
+              <div class="guru-bubble cursor-pointer select-none" aria-live="polite">
+                Se nota que no han visto fútbol en estos tiempos. Haaland no le importa a nadie, es el momento de Rayan ait-Nouri
+              </div>
+              <button
+                type="button"
+                title="Haz clic en el gurú"
+                aria-label="Gurú mencionando a Rayan Aït-Nouri"
+                class="guru-btn font-['Roboto',sans-serif] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37] rounded-xl"
+              >
+                <svg width="130" height="154" viewBox="0 0 140 165" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="40" y1="98" x2="14" y2="86" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                  <line x1="100" y1="98" x2="126" y2="86" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                  <ellipse cx="70" cy="122" rx="32" ry="38" fill="#9333ea" />
+                  <text x="70" y="128" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">@</text>
+                  <path d="M 52 65 L 88 65 L 84 79 Q 70 84 56 79 Z" fill="#f1c27d" />
+                  <g class="guru-head-top">
+                    <path d="M 50 61 L 90 61 L 88 37 Q 70 28 52 37 Z" fill="#f1c27d" />
+                    <path d="M 48 40 Q 70 16 92 40 Q 84 28 70 28 Q 56 28 48 40 Z" fill="#7e22ce" />
+                    <circle cx="70" cy="27" r="4" fill="#facc15" />
+                    <circle cx="62" cy="48" r="5" fill="none" stroke="#0f172a" stroke-width="2" />
+                    <circle cx="78" cy="48" r="5" fill="none" stroke="#0f172a" stroke-width="2" />
+                    <line x1="67" y1="48" x2="73" y2="48" stroke="#0f172a" stroke-width="2" />
+                    <circle cx="62" cy="48" r="2" fill="#0f172a" />
+                    <circle cx="78" cy="48" r="2" fill="#0f172a" />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex justify-start">
+            <div class="monito-widget flex items-start justify-center" data-speech='["..."]'>
+              <div
+                class="monito-bubble relative min-w-[64px] px-4 py-2.5 text-center text-lg font-bold flex flex-col justify-center rounded-[24px] border-2 border-[#6cabdd] bg-white font-['Roboto',sans-serif] text-slate-900 shadow-lg -mr-2 sm:-mr-3 cursor-pointer select-none"
+                aria-live="polite"
+              >
+                <p class="monito-text transition-opacity duration-200 opacity-100">...</p>
+                <svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="pointer-events-none absolute -bottom-[24px] right-5">
+                  <path d="M 2 0 L 18 0 L 18 3 L 2 3 Z" fill="#ffffff" />
+                  <path d="M 2 1 C 9 11 20 18 31 24 C 22 15 18 7 18 1" fill="#ffffff" stroke="#6cabdd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <button
+                type="button"
+                title="Haz clic en el monito"
+                aria-label="Monito azul sorprendido en silencio"
+                class="mono-btn shrink-0 mt-5 font-['Roboto',sans-serif] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37] rounded-xl"
+              >
+                <svg width="115" height="150" viewBox="0 0 120 155" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="34" y1="88" x2="10" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                  <line x1="86" y1="88" x2="110" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                  <ellipse cx="60" cy="112" rx="30" ry="38" fill="#6cabdd" />
+                  <text x="60" y="118" text-anchor="middle" font-size="20" font-weight="800" fill="#0b101b">9</text>
+                  <path d="M 44 54 L 76 54 L 72 68 Q 60 73 48 68 Z" fill="#f1c27d" />
+                  <g class="head-top">
+                    <path d="M 42 50 L 78 50 L 76 26 Q 60 17 44 26 Z" fill="#f1c27d" />
+                    <path d="M 42 30 Q 60 12 78 30 Q 72 22 60 22 Q 48 22 42 30 Z" fill="#facc15" />
+                    <circle cx="53" cy="38" r="2.6" fill="#0f172a" />
+                    <circle cx="67" cy="38" r="2.6" fill="#0f172a" />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Crónica: Haaland y Rayan Aït-Nouri -->
+        <article class="space-y-8 font-['Roboto',sans-serif] text-[15.5px] sm:text-base leading-[1.75] text-[#F4F6F5]">
+          <div class="mx-auto max-w-[68ch] space-y-5">
+            <h2 class="font-['Bebas_Neue',sans-serif] text-3xl sm:text-4xl font-normal tracking-[0.04em] text-[#F4F6F5] leading-[1.12] text-balance">
+              LA CONDENA DE LA EXCELENCIA: CUANDO CUMPLIR NO ALCANZA EN INSTAGRAM
+            </h2>
+            <p>
+              Casi treinta goles en 38 fechas. Un gol cada 125 minutos. Tres veces goleador en cuatro temporadas. A pesar de semejantes cifras, a Erling Haaland cada vez le cuesta más ser tendencia por sus méritos en la cancha. El delantero noruego vive condenado por su propia excelencia.
+            </p>
+            <p>
+              Desde que irrumpió en la élite —con aquella inolvidable marca de nueve goles en un solo partido en el Mundial Sub-20—, Haaland acostumbró al mundo a lo extraordinario. El problema es que cuando la vara está tan alta, la normalidad se vuelve invisible. Hoy, una actuación sólida del atacante del Manchester City apenas genera reacción en el público: la gente no celebra lo esperado, sólo reacciona ante lo inédito.
+            </p>
+            <p>
+              Los datos del gráfico lo reflejan con claridad. En el análisis comparativo, Haaland obtiene una destacada nota de 7.5 en cancha, pero sus menciones en Instagram se quedan en un tímido 3.0. Para el aficionado común, un partido de 7 u 8 puntos en el noruego es simplemente &quot;cumplir con el expediente&quot;; no hay sorpresa y, por ende, tampoco hay necesidad de volcarse a comentar en redes.
+            </p>
+            <p>
+              En los jugadores de menor perfil ocurre exactamente lo contrario. Cuando un futbolista del que se espera un rendimiento estándar firma una actuación estelar, las redes estallan. El caso de Rayan Aït-Nouri ejemplifica esto: su brillante rendimiento de 8.8 en cancha desencadenó un pico de 9.0 en menciones digitales.
+            </p>
+          </div>
+
+          <!-- Gráfico 01: Violación de Expectativas -->
+          <div class="py-1">
+            <div class="mx-auto w-full max-w-[740px] rounded-[12px] border border-[rgba(244,246,245,0.16)] border-t-[3px] border-t-[#D4AF37] bg-[#132A1F] px-5 py-5 text-[#F4F6F5] shadow-xl font-['Roboto',sans-serif]">
+              <div class="mb-1 text-[0.74rem] font-bold uppercase tracking-[0.09em] text-[#D4AF37]">
+                Gráfico 01 · Teoría de la Violación de las Expectativas
+              </div>
+              <h3 class="mb-1.5 font-['Bebas_Neue',sans-serif] text-[1.65rem] font-normal leading-[1.12] tracking-[0.03em] text-[#F4F6F5]">
+                Rendimiento en cancha vs. ruido en Instagram
+              </h3>
+              <p class="mb-4 text-[0.88rem] leading-snug text-[#C3D0C9]">
+                Escala normalizada de 1 a 10. Selecciona un caso para comparar el partido real frente a su impacto digital:
+              </p>
+
+              <div id="expect-controls" class="mb-5 flex flex-wrap gap-2" role="group" aria-label="Seleccionar jugador para comparar">
+                <button type="button" data-view="haaland" aria-pressed="true" class="expect-btn cursor-pointer rounded-[8px] border px-4 py-2 font-['Bebas_Neue',sans-serif] text-[1.05rem] leading-none tracking-[0.04em] transition-all duration-200 border-[#D4AF37] bg-[#D4AF37] text-[#132A1F]">
+                  Erling Haaland (Man City)
+                </button>
+                <button type="button" data-view="aitnouri" aria-pressed="false" class="expect-btn cursor-pointer rounded-[8px] border px-4 py-2 font-['Bebas_Neue',sans-serif] text-[1.05rem] leading-none tracking-[0.04em] transition-all duration-200 border-[rgba(244,246,245,0.16)] bg-[rgba(244,246,245,0.06)] text-[#F4F6F5] hover:border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#132A1F]">
+                  Rayan Aït-Nouri (Irrupción)
+                </button>
+                <button type="button" data-view="both" aria-pressed="false" class="expect-btn cursor-pointer rounded-[8px] border px-4 py-2 font-['Bebas_Neue',sans-serif] text-[1.05rem] leading-none tracking-[0.04em] transition-all duration-200 border-[rgba(244,246,245,0.16)] bg-[rgba(244,246,245,0.06)] text-[#F4F6F5] hover:border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#132A1F]">
+                  Ver contraste lado a lado
+                </button>
+              </div>
+
+              <div id="expect-bars" class="mb-4 flex flex-col gap-4" aria-live="polite"></div>
+              <div id="expect-insight" class="rounded-[8px] border-l-4 border-l-[#D4AF37] bg-[#1B3B2B] px-4 py-3.5 text-[0.88rem] leading-relaxed text-[#C3D0C9]" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div class="mx-auto max-w-[68ch] space-y-5">
+            <p>
+              Desde la psicología cognitiva, este contraste se fundamenta en la Teoría de la Violación de las Expectativas: cuando la excelencia es la norma, un rendimiento destacado no genera conversación porque solo confirma el guion. En cambio, la irrupción inesperada de un actor secundario genera un shock emocional que activa el impulso directo de comentar.
+            </p>
+            <p>
+              Al evaluar la superposición entre el rendimiento deportivo y el impacto en redes, queda claro que el volumen de comentarios en Instagram no es un parámetro real para medir la calidad de un futbolista. Las plataformas digitales no evalúan el juego sobre el césped; solo registran qué tan lejos estuvo un jugador de lo que el público esperaba de él.
+            </p>
+          </div>
+
+          <!-- Mini Trivia 2 -->
+          <div class="pt-2">
+            <div id="desafio-2" class="trivia-widget mx-auto w-full max-w-[740px] scroll-mt-10 rounded-[10px] border border-[rgba(244,246,245,0.16)] border-l-4 border-l-[#D4AF37] bg-[#132A1F] px-[1.05rem] py-[0.9rem] font-['Roboto',sans-serif] text-[#F4F6F5] shadow-lg" data-quiz-id="2"></div>
+          </div>
+        </article>
+
+        <!-- Foto de Rayan Aït-Nouri superando a los demás 9 -->
+        <section class="flex justify-center">
+          <div class="w-full max-w-[480px] rounded-[12px] border border-[#D4AF37]/55 border-t-[3px] border-t-[#D4AF37] bg-[#132A1F] p-5 sm:p-6 shadow-xl">
+            <div class="mx-auto max-w-[340px]">
+              <img
+                src="assets/aistudio/collage_aitnouri_transparent.png"
+                alt="Rayan Aït-Nouri superando a Kai Havertz, Alexander Isak y Erling Haaland"
+                class="w-full h-auto block drop-shadow-[0_10px_22px_rgba(0,0,0,0.45)]"
+              />
+            </div>
+
+            <div class="mt-5 space-y-2.5 border-t border-[rgba(244,246,245,0.12)] pt-4">
+              <div class="flex items-center justify-between rounded-lg border border-[#D4AF37]/50 bg-[#1B3B2B] px-3.5 py-2">
+                <div class="flex items-baseline gap-2">
+                  <span class="font-['Bebas_Neue',sans-serif] text-lg tracking-[0.04em] text-[#F4F6F5]">Rayan Aït-Nouri</span>
+                  <span class="text-[11px] uppercase tracking-wider text-[#C3D0C9]">Irrupción</span>
+                </div>
+                <div class="flex items-baseline gap-2.5">
+                  <span class="font-['Bebas_Neue',sans-serif] text-lg tracking-[0.04em] text-[#D4AF37]">Nota 8.8</span>
+                  <span class="text-xs font-medium text-[#C3D0C9]">IG 9.0</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2 text-center">
+                <div class="rounded-lg border border-[rgba(244,246,245,0.12)] bg-[#1B3B2B]/80 px-2 py-2">
+                  <div class="font-['Bebas_Neue',sans-serif] text-base leading-tight tracking-[0.03em] text-[#F4F6F5]">Kai Havertz</div>
+                  <div class="mt-0.5 text-xs font-medium text-[#D4AF37]">Nota 7.5</div>
+                </div>
+                <div class="rounded-lg border border-[rgba(244,246,245,0.12)] bg-[#1B3B2B]/80 px-2 py-2">
+                  <div class="font-['Bebas_Neue',sans-serif] text-base leading-tight tracking-[0.03em] text-[#F4F6F5]">Alexander Isak</div>
+                  <div class="mt-0.5 text-xs font-medium text-[#D4AF37]">Nota 7.6</div>
+                </div>
+                <div class="rounded-lg border border-[rgba(244,246,245,0.12)] bg-[#1B3B2B]/80 px-2 py-2">
+                  <div class="font-['Bebas_Neue',sans-serif] text-base leading-tight tracking-[0.03em] text-[#F4F6F5]">Erling Haaland</div>
+                  <div class="mt-0.5 text-xs font-medium text-[#D4AF37]">
+                    Nota 7.5 <span class="text-[#FF7B7D]">· IG 3.0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. Diálogo: Mono -> Gurú -> Mono -->
+        <section class="mx-auto max-w-[760px] flex flex-col gap-10">
+          <div class="flex justify-start">
+            <div
+              class="monito-widget flex items-start justify-center"
+              data-speech='["¿Entonces Ait-Nouri es el mejor 9 de la Premier?"]'
+            >
+              <div
+                class="monito-bubble relative w-[245px] sm:w-[295px] min-h-[82px] px-4 py-3 text-[13px] font-medium leading-snug flex flex-col justify-center rounded-[24px] border-2 border-[#6cabdd] bg-white font-['Roboto',sans-serif] text-slate-900 shadow-lg -mr-2 sm:-mr-3 cursor-pointer select-none"
+                aria-live="polite"
+              >
+                <p class="monito-text transition-opacity duration-200 opacity-100">
+                  ¿Entonces Ait-Nouri es el mejor 9 de la Premier?
+                </p>
+                <svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="pointer-events-none absolute -bottom-[24px] right-5">
+                  <path d="M 2 0 L 18 0 L 18 3 L 2 3 Z" fill="#ffffff" />
+                  <path d="M 2 1 C 9 11 20 18 31 24 C 22 15 18 7 18 1" fill="#ffffff" stroke="#6cabdd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <button
+                type="button"
+                title="Haz clic en el monito"
+                aria-label="Monito azul preguntando por Aït-Nouri"
+                class="mono-btn shrink-0 mt-5 font-['Roboto',sans-serif] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37] rounded-xl"
+              >
+                <svg width="115" height="150" viewBox="0 0 120 155" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="34" y1="88" x2="10" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                  <line x1="86" y1="88" x2="110" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                  <ellipse cx="60" cy="112" rx="30" ry="38" fill="#6cabdd" />
+                  <text x="60" y="118" text-anchor="middle" font-size="20" font-weight="800" fill="#0b101b">9</text>
+                  <path d="M 44 54 L 76 54 L 72 68 Q 60 73 48 68 Z" fill="#f1c27d" />
+                  <g class="head-top">
+                    <path d="M 42 50 L 78 50 L 76 26 Q 60 17 44 26 Z" fill="#f1c27d" />
+                    <path d="M 42 30 Q 60 12 78 30 Q 72 22 60 22 Q 48 22 42 30 Z" fill="#facc15" />
+                    <circle cx="53" cy="38" r="2.6" fill="#0f172a" />
+                    <circle cx="67" cy="38" r="2.6" fill="#0f172a" />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <div class="guru-box">
+              <div class="guru-bubble cursor-pointer select-none" aria-live="polite">
+                Menos fútbol que… ya está washed. Es el momento de las jóvenes promesas.
+              </div>
+              <button
+                type="button"
+                title="Haz clic en el gurú"
+                aria-label="Gurú hablando de las jóvenes promesas"
+                class="guru-btn font-['Roboto',sans-serif] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37] rounded-xl"
+              >
+                <svg width="130" height="154" viewBox="0 0 140 165" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="40" y1="98" x2="14" y2="86" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                  <line x1="100" y1="98" x2="126" y2="86" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                  <ellipse cx="70" cy="122" rx="32" ry="38" fill="#9333ea" />
+                  <text x="70" y="128" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">@</text>
+                  <path d="M 52 65 L 88 65 L 84 79 Q 70 84 56 79 Z" fill="#f1c27d" />
+                  <g class="guru-head-top">
+                    <path d="M 50 61 L 90 61 L 88 37 Q 70 28 52 37 Z" fill="#f1c27d" />
+                    <path d="M 48 40 Q 70 16 92 40 Q 84 28 70 28 Q 56 28 48 40 Z" fill="#7e22ce" />
+                    <circle cx="70" cy="27" r="4" fill="#facc15" />
+                    <circle cx="62" cy="48" r="5" fill="none" stroke="#0f172a" stroke-width="2" />
+                    <circle cx="78" cy="48" r="5" fill="none" stroke="#0f172a" stroke-width="2" />
+                    <line x1="67" y1="48" x2="73" y2="48" stroke="#0f172a" stroke-width="2" />
+                    <circle cx="62" cy="48" r="2" fill="#0f172a" />
+                    <circle cx="78" cy="48" r="2" fill="#0f172a" />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex justify-start">
+            <div class="monito-widget flex items-start justify-center" data-speech='["?"]'>
+              <div
+                class="monito-bubble relative min-w-[64px] px-4 py-2.5 text-center text-lg font-bold flex flex-col justify-center rounded-[24px] border-2 border-[#6cabdd] bg-white font-['Roboto',sans-serif] text-slate-900 shadow-lg -mr-2 sm:-mr-3 cursor-pointer select-none"
+                aria-live="polite"
+              >
+                <p class="monito-text transition-opacity duration-200 opacity-100">?</p>
+                <svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="pointer-events-none absolute -bottom-[24px] right-5">
+                  <path d="M 2 0 L 18 0 L 18 3 L 2 3 Z" fill="#ffffff" />
+                  <path d="M 2 1 C 9 11 20 18 31 24 C 22 15 18 7 18 1" fill="#ffffff" stroke="#6cabdd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <button
+                type="button"
+                title="Haz clic en el monito"
+                aria-label="Monito azul confundido"
+                class="mono-btn shrink-0 mt-5 font-['Roboto',sans-serif] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37] rounded-xl"
+              >
+                <svg width="115" height="150" viewBox="0 0 120 155" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="34" y1="88" x2="10" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                  <line x1="86" y1="88" x2="110" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                  <ellipse cx="60" cy="112" rx="30" ry="38" fill="#6cabdd" />
+                  <text x="60" y="118" text-anchor="middle" font-size="20" font-weight="800" fill="#0b101b">9</text>
+                  <path d="M 44 54 L 76 54 L 72 68 Q 60 73 48 68 Z" fill="#f1c27d" />
+                  <g class="head-top">
+                    <path d="M 42 50 L 78 50 L 76 26 Q 60 17 44 26 Z" fill="#f1c27d" />
+                    <path d="M 42 30 Q 60 12 78 30 Q 72 22 60 22 Q 48 22 42 30 Z" fill="#facc15" />
+                    <circle cx="53" cy="38" r="2.6" fill="#0f172a" />
+                    <circle cx="67" cy="38" r="2.6" fill="#0f172a" />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. Crónica: La ceguera de la promesa -->
+        <article class="space-y-8 font-['Roboto',sans-serif] text-[15.5px] sm:text-base leading-[1.75] text-[#F4F6F5]">
+          <div class="mx-auto max-w-[68ch] space-y-5">
+            <h2 class="font-['Bebas_Neue',sans-serif] text-3xl sm:text-4xl font-normal tracking-[0.04em] text-[#F4F6F5] leading-[1.12] text-balance">
+              La ceguera de la promesa: el doble estándar de la ilusión juvenil en la Premier
+            </h2>
+            <p>
+              El hincha de fútbol en redes no tiene paciencia para el presente, pero le sobra fe para lo que todavía no pasa. Si uno se mete a revisar los comentarios en el Instagram de los clubes grandes de Inglaterra, salta a la vista un contraste bien marcado. Y es que existe una flexibilidad e ilusión muy grande frente a las jóvenes promesas versus a los veteranos, el juicio a los delanteros consolidados del primer equipo es más implacable y sin filtro.
+            </p>
+            <p>
+              En el Manchester City se vio claro durante la copa. Con Erling Haaland descansando fuera de la nómina, la atención se fue directo a Floyd Samba, un delantero de 17 años. Bastaron un par de jugadas para que la hinchada se volviera loca en los comentarios &quot;Samba is an absolute gem&quot;, &quot;remember the name&quot; o &quot;we don't need to sign another backup striker&quot;. En cosa de minutos, a un jovén sin minutos en la élite ya lo ponían como la solución lista para la rotación. Y se entiende por qué pasa, con la promesa joven el hincha proyecta todas sus expectativas sin arriesgar nada. Se le perdona un mal pase o una mala decisión porque &quot;está en proceso de adaptación&quot;, y esa misma justificación sirve de escudo. Porque en el peor de los casos es solo soñar y ya.
+            </p>
+          </div>
+
+          <!-- Gráfico 02: Doble Rasero -->
+          <div class="py-1">
+            <div class="mx-auto w-full max-w-[740px] rounded-[12px] border border-[rgba(244,246,245,0.16)] border-t-[3px] border-t-[#D4AF37] bg-[#132A1F] px-5 py-5 text-[#F4F6F5] shadow-xl font-['Roboto',sans-serif]">
+              <div class="mb-1 text-[0.74rem] font-bold uppercase tracking-[0.09em] text-[#D4AF37]">
+                Gráfico 02 · Preferencia por el Potencial (974 comentarios IG)
+              </div>
+              <h3 class="mb-1.5 font-['Bebas_Neue',sans-serif] text-[1.65rem] font-normal leading-[1.12] tracking-[0.03em] text-[#F4F6F5]">
+                El doble rasero en ataque: Promesas vs. Consagrados
+              </h3>
+              <p class="mb-3.5 text-[0.88rem] leading-snug text-[#C3D0C9]">
+                Porcentaje de respaldo y paciencia en comentarios de Instagram.
+                <strong class="font-bold text-[#F4F6F5]">Haz clic en cada barra</strong> para leer la evidencia real:
+              </p>
+
+              <div class="mb-4 flex flex-wrap gap-4 text-[0.8rem] text-[#C3D0C9]">
+                <span class="inline-flex items-center gap-1.5">
+                  <i class="inline-block h-2.5 w-2.5 rounded-[3px] bg-[#D4AF37]" aria-hidden="true"></i>
+                  Promesa / Juvenil (Indulgencia total)
+                </span>
+                <span class="inline-flex items-center gap-1.5">
+                  <i class="inline-block h-2.5 w-2.5 rounded-[3px] bg-[#D9383A]" aria-hidden="true"></i>
+                  Primer Equipo / Fichaje (Juicio implacable)
+                </span>
+              </div>
+
+              <div id="rasero-bars" class="flex flex-col gap-3" role="group" aria-label="Seleccionar jugador para ver comentarios de Instagram"></div>
+
+              <div class="mt-3 text-center text-[0.75rem] uppercase tracking-[0.06em] text-[#C3D0C9]">
+                Tolerancia y Aprobación del Hincha (%)
+              </div>
+
+              <div id="rasero-evidence" class="mt-4 rounded-[8px] border-l-4 border-l-[#D4AF37] bg-[#1B3B2B] px-4 py-3.5" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div class="mx-auto max-w-[68ch] space-y-5">
+            <p>
+              La cosa cambia radicalmente cuando se mira a los delanteros consagrados o que costaron millones. En el Manchester United, a Joshua Zirkzee no le perdonan una. Apenas entra o erra un tiro, las redes se llenan de críticas duras (&quot;Sell Zirkzee&quot;, &quot;¿este es nuestro suplente?&quot;). Al jugador ya instalado se le exige rendir desde el primer minuto y se le cobra cada peso. Lo curioso es que, en ese mismo club, los hinchas pedían subir en masa a los delanteros de la sub-21 tras ganar un partido de juveniles, como si la juventud por sí sola garantizara goles en primera división.
+            </p>
+            <p>
+              En Liverpool pasa algo parecido con la redención tardía. El caso de Cody Gakpo lo deja claro, y es que después de meses de críticas y dudas sobre su puesto, tuvo que meter varios goles seguidos para que recién aparecieran mensajes como &quot;we owe Gakpo an apology&quot;. Al consagrado se le exige pagar peaje en cada partido, al juvenil en cambio, se le aplaude la pura intención.
+            </p>
+          </div>
+
+          <!-- Mini Trivia 3 + Copa Final + Bonus -->
+          <div class="space-y-4 pt-2">
+            <div id="desafio-3" class="trivia-widget mx-auto w-full max-w-[740px] scroll-mt-10 rounded-[10px] border border-[rgba(244,246,245,0.16)] border-l-4 border-l-[#D4AF37] bg-[#132A1F] px-[1.05rem] py-[0.9rem] font-['Roboto',sans-serif] text-[#F4F6F5] shadow-lg" data-quiz-id="3"></div>
+
+            <div id="copa-final" class="mx-auto flex w-full max-w-[740px] flex-wrap items-center justify-between gap-4 rounded-[12px] border border-[#D4AF37]/60 bg-[#132A1F] px-5 py-4 font-['Roboto',sans-serif] shadow-xl transition-all duration-300" aria-live="polite"></div>
+
+            <!-- Bonus Desbloqueado (visible solo al acertar 3/3) -->
+            <section
+              id="bonus-definicion"
+              aria-labelledby="bonus-heading"
+              class="hidden mx-auto w-full max-w-[740px] rounded-[12px] border border-[#D4AF37] bg-[#132A1F] px-5 py-4 font-['Roboto',sans-serif] text-[#F4F6F5] shadow-[0_10px_24px_rgba(0,0,0,0.28)]"
+            >
+              <div class="mb-1.5 flex flex-wrap items-center justify-between gap-2">
+                <span class="text-[0.72rem] font-bold uppercase tracking-[0.08em] text-[#D4AF37]">
+                  🏆 Bonus Desbloqueado · Copa de Oro
+                </span>
+                <span class="text-[0.72rem] font-bold uppercase tracking-[0.08em] text-[#D4AF37]">
+                  Minuto 90+4 · 0.85 xG
+                </span>
+              </div>
+
+              <h3 id="bonus-heading" class="mb-1 font-['Bebas_Neue',sans-serif] text-[1.55rem] font-normal leading-[1.1] tracking-[0.03em] text-[#F4F6F5]">
+                El último balón del partido: calza el remate en el arco
+              </h3>
+
+              <p class="mb-3.5 text-[0.86rem] text-[#C3D0C9]">
+                Frena la pelota dentro de la zona dorada con un clic y mira cómo te juzga la tribuna:
+              </p>
+
+              <div class="mx-auto flex max-w-[560px] items-center gap-2.5">
+                <div
+                  id="bonus-track"
+                  role="button"
+                  tabindex="0"
+                  aria-label="Barra de definición: haz clic para patear"
+                  class="h-9 flex-1 cursor-pointer overflow-hidden rounded-full border border-[rgba(244,246,245,0.16)] bg-[rgba(244,246,245,0.08)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]"
+                >
+                  <svg viewBox="0 0 400 36" class="block h-full w-full select-none" aria-hidden="true">
+                    <rect x="160" y="0" width="80" height="36" fill="rgba(212, 175, 55, 0.26)" />
+                    <line x1="160" y1="0" x2="160" y2="36" stroke="#D4AF37" stroke-width="2" />
+                    <line x1="240" y1="0" x2="240" y2="36" stroke="#D4AF37" stroke-width="2" />
+                    <text x="200" y="22" text-anchor="middle" fill="#D4AF37" font-family="'Bebas Neue', sans-serif" font-size="13" letter-spacing="1.2">
+                      ARCO
+                    </text>
+                    <g id="bonus-ball" transform="translate(24, 18)">
+                      <text x="0" y="6" text-anchor="middle" font-size="19" class="pointer-events-none select-none">⚽</text>
+                    </g>
+                  </svg>
+                </div>
+
+                <button
+                  id="bonus-shoot-btn"
+                  type="button"
+                  class="shrink-0 cursor-pointer rounded-[8px] border-0 bg-[#D4AF37] px-4 py-2 font-['Bebas_Neue',sans-serif] text-[1.12rem] leading-none tracking-[0.04em] text-[#132A1F] transition-opacity duration-150 hover:opacity-90"
+                >
+                  ¡DEFINIR!
+                </button>
+                <button
+                  id="bonus-reset-btn"
+                  type="button"
+                  class="hidden shrink-0 cursor-pointer rounded-[8px] border border-[rgba(244,246,245,0.16)] bg-[rgba(244,246,245,0.08)] px-3.5 py-2 font-['Bebas_Neue',sans-serif] text-[1.05rem] leading-none tracking-[0.04em] text-[#F4F6F5] transition-colors duration-150 hover:border-[#D4AF37] hover:text-[#D4AF37]"
+                >
+                  Otra vez
+                </button>
+              </div>
+
+              <div id="bonus-result" class="hidden mt-4 border-t border-[rgba(244,246,245,0.16)] pt-3.5" aria-live="polite"></div>
+            </section>
+          </div>
+        </article>
+
+        <!-- 9. Cierre Mono -->
+        <section class="flex justify-center">
+          <div
+            class="monito-widget flex items-start justify-center"
+            data-speech='["Al final del día, este es un debate marcado por una profunda subjetividad e inmediatez. Factores como la edad, desempeño anterior, entre otros, afectan al cariño en Instagram.","En donde el único ganador son los “Gurús” que tienen el poder de cambiarlo todo."]'
+          >
+            <div
+              class="monito-bubble relative w-[245px] sm:w-[295px] min-h-[112px] px-4 py-3 text-[13px] font-medium leading-snug flex flex-col justify-center rounded-[24px] border-2 border-[#6cabdd] bg-white font-['Roboto',sans-serif] text-slate-900 shadow-lg -mr-2 sm:-mr-3 cursor-pointer select-none"
+              aria-live="polite"
+            >
+              <p class="monito-text transition-opacity duration-200 opacity-100">
+                Al final del día, este es un debate marcado por una profunda subjetividad e inmediatez. Factores como la edad, desempeño anterior, entre otros, afectan al cariño en Instagram.
+              </p>
+              <span class="monito-counter mt-1.5 self-end text-[11px] font-normal tabular-nums text-slate-400">
+                1/2
+              </span>
+              <svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="pointer-events-none absolute -bottom-[24px] right-5">
+                <path d="M 2 0 L 18 0 L 18 3 L 2 3 Z" fill="#ffffff" />
+                <path d="M 2 1 C 9 11 20 18 31 24 C 22 15 18 7 18 1" fill="#ffffff" stroke="#6cabdd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <button
+              type="button"
+              title="Haz clic en el monito"
+              aria-label="Monito azul con el 9 cerrando el debate"
+              class="mono-btn shrink-0 mt-5 font-['Roboto',sans-serif] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37] rounded-xl"
+            >
+              <svg width="115" height="150" viewBox="0 0 120 155" xmlns="http://www.w3.org/2000/svg">
+                <line x1="34" y1="88" x2="10" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                <line x1="86" y1="88" x2="110" y2="76" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round" />
+                <ellipse cx="60" cy="112" rx="30" ry="38" fill="#6cabdd" />
+                <text x="60" y="118" text-anchor="middle" font-size="20" font-weight="800" fill="#0b101b">9</text>
+                <path d="M 44 54 L 76 54 L 72 68 Q 60 73 48 68 Z" fill="#f1c27d" />
+                <g class="head-top">
+                  <path d="M 42 50 L 78 50 L 76 26 Q 60 17 44 26 Z" fill="#f1c27d" />
+                  <path d="M 42 30 Q 60 12 78 30 Q 72 22 60 22 Q 48 22 42 30 Z" fill="#facc15" />
+                  <circle cx="53" cy="38" r="2.6" fill="#0f172a" />
+                  <circle cx="67" cy="38" r="2.6" fill="#0f172a" />
+                </g>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- Foto Gurú levantando la copa -->
+        <section class="flex justify-center">
+          <div class="w-full max-w-[680px]">
+            <img
+              src="assets/aistudio/guru_copa_transparent.png"
+              alt="Gurú de redes levantando la Copa Instagram sobre los delanteros"
+              class="w-full h-auto block"
+            />
+          </div>
+        </section>
+
+        <!-- Pie de cierre siempre visible -->
+        <footer class="mx-auto mt-4 flex w-full max-w-[740px] flex-wrap items-center justify-between gap-3 border-t border-[rgba(244,246,245,0.16)] px-4 py-4 font-['Roboto',sans-serif] text-[0.86rem] text-[#C3D0C9]">
+          <div>
+            Realizado por
+            <strong class="font-bold text-[#D4AF37]">
+              Adalú Salas, Sebastián González y Santiago Barros
+            </strong>
+          </div>
+          <button
+            id="scroll-top-btn"
+            type="button"
+            class="cursor-pointer rounded-[6px] border border-[rgba(244,246,245,0.16)] bg-transparent px-3 py-1.5 text-[0.8rem] text-[#F4F6F5] transition-colors duration-150 hover:border-[#D4AF37] hover:text-[#D4AF37]"
+          >
+            ↑ Volver arriba
+          </button>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      (function () {
+        // 1. Barra de progreso de lectura
+        const progressEl = document.getElementById('reading-progress');
+        function updateProgress() {
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          progressEl.value = docHeight <= 0 ? 0 : Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
+        }
+        updateProgress();
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        window.addEventListener('resize', updateProgress, { passive: true });
+
+        // 2. Personajes Monito y Gurú
+        document.querySelectorAll('.monito-widget').forEach((widget) => {
+          const parts = JSON.parse(widget.getAttribute('data-speech') || '[]');
+          const bubble = widget.querySelector('.monito-bubble');
+          const textEl = widget.querySelector('.monito-text');
+          const counterEl = widget.querySelector('.monito-counter');
+          const btn = widget.querySelector('.mono-btn');
+          let index = 0;
+          let switchTimer = null;
+          let fadeTimer = null;
+
+          function scheduleNext() {
+            if (parts.length <= 1) return;
+            clearTimeout(switchTimer);
+            clearTimeout(fadeTimer);
+            const duration = Math.max(4000, Math.min(7200, parts[index].length * 38));
+            switchTimer = setTimeout(() => {
+              textEl.classList.remove('opacity-100');
+              textEl.classList.add('opacity-0');
+              fadeTimer = setTimeout(() => {
+                index = (index + 1) % parts.length;
+                textEl.textContent = parts[index];
+                if (counterEl) counterEl.textContent = index + 1 + '/' + parts.length;
+                textEl.classList.remove('opacity-0');
+                textEl.classList.add('opacity-100');
+                scheduleNext();
+              }, 200);
+            }, duration);
+          }
+
+          function handleInteract() {
+            btn.classList.remove('hop');
+            void btn.offsetWidth;
+            btn.classList.add('hop');
+            if (parts.length > 1) {
+              clearTimeout(switchTimer);
+              clearTimeout(fadeTimer);
+              index = (index + 1) % parts.length;
+              textEl.textContent = parts[index];
+              if (counterEl) counterEl.textContent = index + 1 + '/' + parts.length;
+              textEl.classList.remove('opacity-0');
+              textEl.classList.add('opacity-100');
+              scheduleNext();
+            }
+          }
+
+          bubble.addEventListener('click', handleInteract);
+          btn.addEventListener('click', handleInteract);
+          scheduleNext();
+        });
+
+        document.querySelectorAll('.guru-box').forEach((box) => {
+          const bubble = box.querySelector('.guru-bubble');
+          const btn = box.querySelector('.guru-btn');
+          function hopGuru() {
+            btn.classList.remove('hop');
+            void btn.offsetWidth;
+            btn.classList.add('hop');
+          }
+          bubble.addEventListener('click', hopGuru);
+          btn.addEventListener('click', hopGuru);
+        });
+
+        // 3. Gráfico 03: Eficiencia xG vs Sentimiento
+        const RAW_DATA = [
+          { id: 1, fecha: '2026-08-22', nombre: 'Erling Haaland', club: 'Man City', goles: 2, xg: 1.85, ef: 0.15, com: 1500, sent: 'Positivo', aprob: 88.5 },
+          { id: 2, fecha: '2026-08-22', nombre: 'Nicolas Jackson', club: 'Chelsea', goles: 0, xg: 0.82, ef: -0.82, com: 2100, sent: 'Negativo', aprob: 24.0 },
+          { id: 3, fecha: '2026-08-23', nombre: 'Rasmus Højlund', club: 'Man United', goles: 0, xg: 0.3, ef: -0.3, com: 1800, sent: 'Negativo', aprob: 31.5 },
+          { id: 4, fecha: '2026-08-23', nombre: 'Darwin Núñez', club: 'Liverpool', goles: 1, xg: 1.1, ef: -0.1, com: 1950, sent: 'Positivo', aprob: 62.0 },
+          { id: 5, fecha: '2026-08-24', nombre: 'Kai Havertz', club: 'Arsenal', goles: 1, xg: 0.65, ef: 0.35, com: 1400, sent: 'Positivo', aprob: 75.0 },
+          { id: 6, fecha: '2026-08-24', nombre: 'Dominic Solanke', club: 'Tottenham', goles: 0, xg: 0.4, ef: -0.4, com: 950, sent: 'Neutro', aprob: 48.0 },
+          { id: 7, fecha: '2026-08-29', nombre: 'Erling Haaland', club: 'Man City', goles: 3, xg: 2.1, ef: 0.9, com: 3200, sent: 'Positivo', aprob: 94.0 },
+          { id: 8, fecha: '2026-08-29', nombre: 'Nicolas Jackson', club: 'Chelsea', goles: 1, xg: 0.95, ef: 0.05, com: 1100, sent: 'Positivo', aprob: 68.0 },
+          { id: 9, fecha: '2026-08-30', nombre: 'Joshua Zirkzee', club: 'Man United', goles: 1, xg: 0.7, ef: 0.3, com: 1600, sent: 'Positivo', aprob: 71.0 },
+          { id: 10, fecha: '2026-08-30', nombre: 'Diogo Jota', club: 'Liverpool', goles: 0, xg: 0.25, ef: -0.25, com: 850, sent: 'Neutro', aprob: 52.0 },
+          { id: 11, fecha: '2026-08-31', nombre: 'Gabriel Jesus', club: 'Arsenal', goles: 0, xg: 0.5, ef: -0.5, com: 1300, sent: 'Negativo', aprob: 38.0 },
+          { id: 12, fecha: '2026-08-31', nombre: 'Richarlison', club: 'Tottenham', goles: 0, xg: 0.15, ef: -0.15, com: 1050, sent: 'Negativo', aprob: 29.0 },
+          { id: 13, fecha: '2026-09-12', nombre: 'Omar Marmoush', club: 'Man City', goles: 0, xg: 0.2, ef: -0.2, com: 780, sent: 'Neutro', aprob: 50.0 },
+          { id: 14, fecha: '2026-09-12', nombre: 'Christopher Nkunku', club: 'Chelsea', goles: 1, xg: 0.6, ef: 0.4, com: 1250, sent: 'Positivo', aprob: 79.0 },
+          { id: 15, fecha: '2026-09-13', nombre: 'Cody Gakpo', club: 'Liverpool', goles: 1, xg: 0.85, ef: 0.15, com: 1100, sent: 'Positivo', aprob: 73.0 },
+          { id: 16, fecha: '2026-09-13', nombre: 'Chido Obi-Martin', club: 'Man United', goles: 0, xg: 0.1, ef: -0.1, com: 900, sent: 'Neutro', aprob: 55.0 },
+          { id: 17, fecha: '2026-09-14', nombre: 'Viktor Gyökeres', club: 'Arsenal', goles: 2, xg: 1.5, ef: 0.5, com: 2800, sent: 'Positivo', aprob: 91.0 },
+          { id: 18, fecha: '2026-09-14', nombre: 'Dominic Solanke', club: 'Tottenham', goles: 1, xg: 0.75, ef: 0.25, com: 1200, sent: 'Positivo', aprob: 69.0 },
+        ];
+        const COLOR_MAP = { Positivo: '#D4AF37', Neutro: '#E07A2B', Negativo: '#D9383A' };
+        const FEATURED = new Set(['Erling Haaland|0.9', 'Nicolas Jackson|-0.82', 'Darwin Núñez|-0.1', 'Viktor Gyökeres|0.5']);
+        const PAD = { left: 54, right: 26, top: 24, bottom: 48 };
+        const W = 680, H = 370, PLOT_W = W - PAD.left - PAD.right, PLOT_H = H - PAD.top - PAD.bottom;
+        const xScale = (v) => PAD.left + ((v - -1.0) / (1.05 - -1.0)) * PLOT_W;
+        const yScale = (v) => PAD.top + PLOT_H - ((v - 15) / (100 - 15)) * PLOT_H;
+        const rScale = (c) => 6 + ((c - 780) / (3200 - 780)) * 13;
+
+        function svgEl(tag, attrs, textContent) {
+          const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+          for (const [k, v] of Object.entries(attrs || {})) {
+            if (v !== undefined && v !== null) el.setAttribute(k, String(v));
+          }
+          if (textContent !== undefined) el.textContent = textContent;
+          return el;
+        }
+
+        let xgFilter = 'all';
+        let xgSelectedId = 2;
+        const xgSvg = document.getElementById('xg-svg');
+        const xgDetail = document.getElementById('xg-detail');
+
+        function renderXgDetail(rec) {
+          if (!rec) return;
+          const sign = rec.ef >= 0 ? '+' : '';
+          xgDetail.innerHTML =
+            '<div class="mb-0.5 font-[\'Bebas_Neue\',sans-serif] text-[1.25rem] leading-tight tracking-[0.03em] text-[#D4AF37]">' +
+            rec.nombre + ' (' + rec.club + ') — ' + rec.aprob.toFixed(1) + '% Aprobación</div>' +
+            '<div><strong class="font-bold text-[#F4F6F5]">Partido (' + rec.fecha + '):</strong> ' +
+            rec.goles + ' gol(es) · ' + rec.xg.toFixed(2) + ' xG · Eficiencia: ' +
+            '<strong class="font-bold text-[#F4F6F5]">' + sign + rec.ef.toFixed(2) + '</strong> · ' +
+            rec.com.toLocaleString('es-CL') + ' comentarios (' + rec.sent + ').</div>';
+        }
+
+        function updateXgSelection(id) {
+          xgSelectedId = id;
+          xgSvg.querySelectorAll('circle[data-id]').forEach((c) => {
+            const isSel = Number(c.getAttribute('data-id')) === xgSelectedId;
+            c.setAttribute('stroke', isSel ? '#FFFFFF' : '#132A1F');
+            c.setAttribute('stroke-width', isSel ? '2.5' : '1.5');
+          });
+          const rec = RAW_DATA.find((d) => d.id === xgSelectedId);
+          renderXgDetail(rec);
+        }
+
+        function renderXgChart() {
+          xgSvg.innerHTML = '';
+          [20, 40, 60, 80, 100].forEach((yv) => {
+            const y = yScale(yv);
+            xgSvg.appendChild(svgEl('line', { x1: PAD.left, y1: y, x2: W - PAD.right, y2: y, stroke: 'rgba(244,246,245,0.1)', 'stroke-width': 1 }));
+            xgSvg.appendChild(svgEl('text', { x: PAD.left - 8, y: y + 4, fill: '#C3D0C9', 'font-size': '11', 'text-anchor': 'end' }, yv + '%'));
+          });
+          [-0.8, -0.4, 0, 0.4, 0.8].forEach((xv) => {
+            const x = xScale(xv);
+            const isZero = xv === 0;
+            xgSvg.appendChild(svgEl('line', {
+              x1: x, y1: PAD.top, x2: x, y2: H - PAD.bottom,
+              stroke: isZero ? '#D4AF37' : 'rgba(244,246,245,0.1)',
+              'stroke-width': isZero ? 1.6 : 1,
+              'stroke-dasharray': isZero ? '5,4' : null
+            }));
+            xgSvg.appendChild(svgEl('text', {
+              x: x, y: H - PAD.bottom + 18,
+              fill: isZero ? '#D4AF37' : '#C3D0C9', 'font-size': '11', 'text-anchor': 'middle'
+            }, (xv > 0 ? '+' : '') + xv.toFixed(1)));
+          });
+
+          xgSvg.appendChild(svgEl('text', { x: xScale(0) + 6, y: PAD.top + 12, fill: '#D4AF37', 'font-size': '10', 'font-weight': '700' }, 'Línea esperada (0.0)'));
+          xgSvg.appendChild(svgEl('text', { x: PAD.left + PLOT_W / 2, y: H - 8, fill: '#F4F6F5', 'font-size': '11', 'font-weight': '700', 'text-anchor': 'middle' }, 'Eficiencia xG (Goles Anotados - Goles Esperados)'));
+          xgSvg.appendChild(svgEl('text', {
+            x: 15, y: PAD.top + PLOT_H / 2, fill: '#F4F6F5', 'font-size': '11', 'font-weight': '700', 'text-anchor': 'middle',
+            transform: 'rotate(-90, 15, ' + (PAD.top + PLOT_H / 2) + ')'
+          }, 'Aprobación en Redes (%)'));
+
+          const filtered = RAW_DATA.filter((d) => xgFilter === 'goal' ? d.goles > 0 : xgFilter === 'nogoal' ? d.goles === 0 : true);
+          if (!filtered.some((d) => d.id === xgSelectedId) && filtered.length) {
+            const def = filtered.find((d) => d.nombre === 'Nicolas Jackson' && d.goles === 0) || filtered[0];
+            xgSelectedId = def.id;
+          }
+
+          filtered.forEach((d) => {
+            const cx = xScale(d.ef), cy = yScale(d.aprob), r = rScale(d.com);
+            const isSel = d.id === xgSelectedId;
+            const circle = svgEl('circle', {
+              cx, cy, r, fill: COLOR_MAP[d.sent], 'fill-opacity': 0.88,
+              stroke: isSel ? '#FFFFFF' : '#132A1F', 'stroke-width': isSel ? 2.5 : 1.5,
+              tabindex: 0, role: 'button', 'data-id': d.id,
+              'aria-label': d.nombre + ' (' + d.club + '): ' + d.aprob.toFixed(1) + '% aprobación',
+              class: 'cursor-pointer transition-all duration-150 hover:stroke-white focus:outline-none'
+            });
+            circle.addEventListener('mouseenter', () => updateXgSelection(d.id));
+            circle.addEventListener('click', () => updateXgSelection(d.id));
+            circle.addEventListener('focus', () => updateXgSelection(d.id));
+            circle.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); updateXgSelection(d.id); }
+            });
+            xgSvg.appendChild(circle);
+
+            if (FEATURED.has(d.nombre + '|' + d.ef)) {
+              const dx = d.ef > 0.7 ? -10 : 0;
+              xgSvg.appendChild(svgEl('text', {
+                x: cx + dx, y: cy - r - 5, fill: '#F4F6F5', 'font-size': '10.5', 'font-weight': '700',
+                'text-anchor': 'middle', class: 'pointer-events-none select-none'
+              }, d.nombre.split(' ')[1]));
+            }
+          });
+          renderXgDetail(RAW_DATA.find((d) => d.id === xgSelectedId));
+        }
+
+        document.querySelectorAll('.xg-filter-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            xgFilter = btn.getAttribute('data-filter');
+            document.querySelectorAll('.xg-filter-btn').forEach((b) => {
+              const active = b === btn;
+              b.setAttribute('aria-pressed', active ? 'true' : 'false');
+              b.className = 'xg-filter-btn cursor-pointer rounded-[8px] border px-3.5 py-[0.45rem] font-[\'Bebas_Neue\',sans-serif] text-[1rem] leading-none tracking-[0.04em] transition-all duration-200 ' +
+                (active
+                  ? 'border-[#D4AF37] bg-[#D4AF37] text-[#132A1F]'
+                  : 'border-[rgba(244,246,245,0.16)] bg-[rgba(244,246,245,0.06)] text-[#F4F6F5] hover:border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#132A1F]');
+            });
+            renderXgChart();
+          });
+        });
+        renderXgChart();
+
+        // 4. Gráfico 01: Violación de Expectativas
+        const EXPECT_CASES = {
+          haaland: {
+            rows: [
+              { label: 'Nota real en cancha (1–10)', val: 7.5, width: '75%', tone: 'gold' },
+              { label: 'Índice de menciones en Instagram (1–10)', val: 3.0, width: '30%', tone: 'red' },
+            ],
+            lead: 'Condenado por su propia excelencia:',
+            body: " Haaland firma un sólido 7.5, pero para el hincha es simplemente 'cumplir con el expediente'. Sin sorpresa, la conversación cae a 3.0.",
+          },
+          aitnouri: {
+            rows: [
+              { label: 'Nota real en cancha (1–10)', val: 8.8, width: '88%', tone: 'gold' },
+              { label: 'Índice de menciones en Instagram (1–10)', val: 9.0, width: '90%', tone: 'gold' },
+            ],
+            lead: 'Shock emocional ante lo inédito:',
+            body: ' Cuando un futbolista de perfil más discreto alcanza un 8.8 inesperado, rompe el guion y dispara las menciones digitales hasta 9.0.',
+          },
+          both: {
+            rows: [
+              { label: 'Haaland — Nota en cancha (7.5) vs. Menciones IG (3.0)', val: 3.0, width: '30%', tone: 'red', sub: 'Brecha: -4.5 pts de atención digital frente a su rendimiento' },
+              { label: 'Aït-Nouri — Nota en cancha (8.8) vs. Menciones IG (9.0)', val: 9.0, width: '90%', tone: 'gold', sub: 'Brecha: +0.2 pts (pico máximo de conversación en redes)' },
+            ],
+            lead: 'Conclusión:',
+            body: ' Instagram no mide quién juega mejor, sino qué tan lejos estuvo un jugador de lo que la tribuna esperaba de él.',
+          },
+        };
+
+        const expectBars = document.getElementById('expect-bars');
+        const expectInsight = document.getElementById('expect-insight');
+
+        function renderExpect(view) {
+          const cur = EXPECT_CASES[view];
+          expectBars.innerHTML = cur.rows.map((r) =>
+            '<div class="rounded-[8px] bg-[rgba(255,255,255,0.03)] px-3.5 py-3">' +
+              '<div class="mb-1.5 flex items-baseline justify-between gap-3">' +
+                '<span class="text-[0.88rem] font-medium text-[#F4F6F5]">' + r.label + '</span>' +
+                '<span class="shrink-0 font-[\'Bebas_Neue\',sans-serif] text-[1.45rem] leading-none ' + (r.tone === 'red' ? 'text-[#FF7B7D]' : 'text-[#D4AF37]') + '">' + r.val.toFixed(1) + ' / 10</span>' +
+              '</div>' +
+              '<div class="h-4 w-full overflow-hidden rounded-full bg-[rgba(244,246,245,0.1)]">' +
+                '<div class="h-full rounded-full transition-[width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ' + (r.tone === 'red' ? 'bg-[#D9383A]' : 'bg-[#D4AF37]') + '" style="width:' + r.width + '"></div>' +
+              '</div>' +
+              (r.sub ? '<div class="mt-1.5 text-[0.78rem] text-[#C3D0C9]">' + r.sub + '</div>' : '') +
+            '</div>'
+          ).join('');
+          expectInsight.innerHTML = '<strong class="font-bold text-[#F4F6F5]">' + cur.lead + '</strong>' + cur.body;
+        }
+
+        document.querySelectorAll('.expect-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const view = btn.getAttribute('data-view');
+            document.querySelectorAll('.expect-btn').forEach((b) => {
+              const active = b === btn;
+              b.setAttribute('aria-pressed', active ? 'true' : 'false');
+              b.className = 'expect-btn cursor-pointer rounded-[8px] border px-4 py-2 font-[\'Bebas_Neue\',sans-serif] text-[1.05rem] leading-none tracking-[0.04em] transition-all duration-200 ' +
+                (active
+                  ? 'border-[#D4AF37] bg-[#D4AF37] text-[#132A1F]'
+                  : 'border-[rgba(244,246,245,0.16)] bg-[rgba(244,246,245,0.06)] text-[#F4F6F5] hover:border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#132A1F]');
+            });
+            renderExpect(view);
+          });
+        });
+        renderExpect('haaland');
+
+        // 5. Gráfico 02: Doble Rasero
+        const RASERO_ITEMS = [
+          {
+            id: 'samba', player: 'Floyd Samba (17 años)', club: 'Man City', pct: 100, fill: 'bg-[#D4AF37]', redText: false,
+            badge: 'PROMESA · INDULGENCIA TOTAL', match: 'Instagram oficial: City V Norwich',
+            quote: '“Floyd Samba remember the name🔥 / Samba is an absolute gem !!!🩵🤞😭”',
+            note: '11 menciones directas de respaldo unánime: la hinchada lo pide en la rotación sin exigirle historial en élite.',
+          },
+          {
+            id: 'u21', player: 'Juveniles Sub-21', club: 'Man United', pct: 93, fill: 'bg-[#D4AF37]', redText: false,
+            badge: 'CANTERA · INDULGENCIA TOTAL', match: 'Instagram oficial: United V Brentford',
+            quote: '“Atleast the u21s can win games / It’s always U21/20 can’t the big team level up”',
+            note: 'Los hinchas usan el triunfo juvenil como escudo de ilusión frente a la irregularidad del primer equipo.',
+          },
+          {
+            id: 'gakpo', player: 'Cody Gakpo', club: 'Liverpool', pct: 30, fill: 'bg-[#E07A2B]', redText: true,
+            badge: 'PRIMER EQUIPO · REDENCIÓN TARDÍA', match: 'Instagram oficial: Liverpool V Bournemouth',
+            quote: '“Gakpo we owe you an apology mate🔥😂 / Gakpo is pure class...We owe him a big apology 🙌”',
+            note: 'Tras meses de cuestionamientos, recién al encadenar goles aparecen mensajes de disculpa en la tribuna.',
+          },
+          {
+            id: 'zirkzee', player: 'Joshua Zirkzee', club: 'Man United', pct: 12, fill: 'bg-[#D9383A]', redText: true,
+            badge: 'PRIMER EQUIPO / FICHAJE · JUICIO IMPLACABLE', match: 'Instagram oficial: United V Brentford / Fulham',
+            quote: '“Sell Zirkzee we have a future players. / Really our sup sub is Zirkzee 😂🤣.”',
+            note: 'Cero tiempo de gracia: cada fallo detona pedidos inmediatos de venta.',
+          },
+        ];
+
+        let raseroSelected = 'samba';
+        const raseroBars = document.getElementById('rasero-bars');
+        const raseroEvidence = document.getElementById('rasero-evidence');
+
+        function renderRasero() {
+          raseroBars.innerHTML = '';
+          RASERO_ITEMS.forEach((item) => {
+            const active = item.id === raseroSelected;
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+            btn.className = 'w-full cursor-pointer rounded-[8px] border px-3 py-2.5 text-left text-[#F4F6F5] transition-all duration-200 ' +
+              (active
+                ? 'translate-x-[3px] border-[#D4AF37] bg-[rgba(212,175,55,0.09)]'
+                : 'border-transparent bg-[rgba(255,255,255,0.03)] hover:translate-x-[3px] hover:border-[#D4AF37] hover:bg-[rgba(212,175,55,0.09)]');
+            btn.innerHTML =
+              '<div class="mb-1.5 flex items-baseline justify-between gap-2">' +
+                '<div><span class="font-[\'Bebas_Neue\',sans-serif] text-[1.18rem] leading-none tracking-[0.03em] text-[#F4F6F5]">' + item.player + '</span>' +
+                '<span class="ml-1.5 text-[0.78rem] text-[#C3D0C9]">[' + item.club + ']</span></div>' +
+                '<span class="shrink-0 font-[\'Bebas_Neue\',sans-serif] text-[1.3rem] leading-none ' + (item.redText ? 'text-[#FF7B7D]' : 'text-[#D4AF37]') + '">' + item.pct + '%</span>' +
+              '</div>' +
+              '<div class="h-[14px] w-full overflow-hidden rounded-full bg-[rgba(244,246,245,0.1)]">' +
+                '<div class="h-full rounded-full ' + item.fill + '" style="width:' + item.pct + '%"></div>' +
+              '</div>';
+            btn.addEventListener('click', () => { raseroSelected = item.id; renderRasero(); });
+            raseroBars.appendChild(btn);
+          });
+          const cur = RASERO_ITEMS.find((i) => i.id === raseroSelected) || RASERO_ITEMS[0];
+          raseroEvidence.innerHTML =
+            '<div class="mb-1.5 flex flex-wrap justify-between gap-1.5 text-[0.74rem]">' +
+              '<span class="font-bold tracking-[0.05em] text-[#D4AF37]">' + cur.badge + '</span>' +
+              '<span class="text-[#C3D0C9]">' + cur.match + '</span>' +
+            '</div>' +
+            '<div class="mb-1.5 text-[0.96rem] italic leading-snug text-[#F4F6F5]">' + cur.quote + '</div>' +
+            '<div class="text-[0.84rem] leading-relaxed text-[#C3D0C9]">' + cur.note + '</div>';
+        }
+        renderRasero();
+
+        // 6. Trivias, Copa Instagram y Bonus Final
+        const TRIVIAS = {
+          1: {
+            kicker: 'Desafío 1/3 · La Dictadura del Gol',
+            question: '¿Qué explica que la hinchada perdone un mal partido si entra un gol y crucifique a quien generó peligro sin marcar?',
+            options: [
+              { label: 'Efecto Halo', ok: false, lead: 'Incorrecto (era Sesgo de Resultado):', body: ' Aquí la opinión no viene de la fama previa, sino que cambia en segundos según el marcador.' },
+              { label: 'Sesgo de Resultado', ok: true, lead: '¡Acierto! Primera estrella:', body: ' La tribuna borra todo el proceso (xG y desmarques) y juzga únicamente si la pelota entró.' },
+              { label: 'Sesgo de Confirmación', ok: false, lead: 'Incorrecto (era Sesgo de Resultado):', body: " En el 'efecto gol', un solo tanto basta para dar vuelta la opinión de la masa de un minuto a otro." },
+            ],
+          },
+          2: {
+            kicker: 'Desafío 2/3 · Expectativas en Cancha',
+            question: 'Haaland saca 7.5 en cancha y 3.0 en menciones; Rayan Aït-Nouri 8.8 y 9.0. ¿Qué fenómeno explica este contraste?',
+            options: [
+              { label: 'Fatiga de Decisión', ok: false, lead: 'Incorrecto (era Violación de Expectativas):', body: ' Aquí el hincha sí tiene energía para comentar, pero solo cuando alguien rompe el libreto esperado.' },
+              { label: 'Sesgo de Negatividad', ok: false, lead: 'Incorrecto (era Violación de Expectativas):', body: ' El silencio ante Haaland ocurre incluso cuando juega bien y cumple en cancha.' },
+              { label: 'Violación de Expectativas', ok: true, lead: '¡Acierto! Segunda estrella:', body: ' Cuando la excelencia es costumbre, cumplir no sorprende; la irrupción inesperada dispara las redes.' },
+            ],
+          },
+          3: {
+            kicker: 'Desafío 3/3 · La Ceguera de la Promesa',
+            question: '100% de paciencia para un juvenil de 17 años y apenas 12% para un fichaje instalado. ¿Qué sesgo opera aquí?',
+            options: [
+              { label: 'Sesgo de Antigüedad', ok: false, lead: 'Incorrecto (era Preferencia por el Potencial):', body: ' Ese sesgo favorece a quien tiene más trayectoria, y en Instagram al consagrado se le exige el doble.' },
+              { label: 'Preferencia por el Potencial', ok: true, lead: '¡Acierto! Tercera estrella:', body: ' El hincha valora más la fantasía de lo que un novato puede llegar a ser que el rendimiento ya comprobado.' },
+              { label: 'Mera Exposición', ok: false, lead: 'Incorrecto (era Preferencia por el Potencial):', body: ' A promesas como Floyd Samba las aplauden con apenas un puñado de minutos en cancha.' },
+            ],
+          },
+        };
+
+        const answers = { 1: null, 2: null, 3: null };
+        const bonusSection = document.getElementById('bonus-definicion');
+
+        function starsHtml() {
+          return [1, 2, 3].map((n) => {
+            const a = answers[n];
+            if (!a) return '<span>★</span>';
+            return '<span class="' + (a.ok ? 'text-[#D4AF37]' : 'text-[#D9383A]') + '" title="Desafío ' + n + ': ' + (a.ok ? 'acierto' : 'fallado') + '">' + (a.ok ? '★' : '✕') + '</span>';
+          }).join('');
+        }
+
+        function renderTrivias() {
+          document.querySelectorAll('.trivia-widget').forEach((el) => {
+            const id = Number(el.getAttribute('data-quiz-id'));
+            const q = TRIVIAS[id];
+            const ans = answers[id];
+            const locked = ans !== null;
+            const selOpt = locked ? q.options[ans.idx] : null;
+
+            el.innerHTML =
+              '<div class="mb-1.5 flex flex-wrap items-center justify-between gap-2">' +
+                '<span class="text-[0.72rem] font-bold uppercase tracking-[0.08em] text-[#D4AF37]">' + q.kicker + ' · 1 intento</span>' +
+                '<span class="inline-flex items-center gap-1 rounded-full border border-[rgba(244,246,245,0.16)] bg-[rgba(255,255,255,0.04)] px-2.5 py-0.5 text-[0.85rem] tracking-[2px] text-[rgba(244,246,245,0.28)]" aria-label="Progreso Copa Instagram">' + starsHtml() + '</span>' +
+              '</div>' +
+              '<p class="mb-3 text-[0.94rem] font-medium leading-[1.4] text-[#F4F6F5]">' + q.question + '</p>' +
+              '<div class="grid grid-cols-1 gap-2 min-[601px]:grid-cols-3">' +
+                q.options.map((opt, idx) => {
+                  const picked = ans && ans.idx === idx;
+                  let cls = 'border-[rgba(244,246,245,0.16)] bg-[rgba(244,246,245,0.06)] text-[#F4F6F5] hover:border-[#D4AF37] hover:bg-[rgba(212,175,55,0.12)]';
+                  if (locked) {
+                    if (picked && opt.ok) cls = 'border-[#D4AF37] bg-[rgba(212,175,55,0.22)] text-[#D4AF37] font-bold';
+                    else if (picked && !opt.ok) cls = 'border-[#D9383A] bg-[rgba(217,56,58,0.22)] text-[#FFB3B4] font-bold';
+                    else if (!ans.ok && opt.ok) cls = 'border-[#D4AF37]/60 bg-[rgba(212,175,55,0.08)] text-[#D4AF37]/90';
+                    else cls = 'border-[rgba(244,246,245,0.1)] bg-[rgba(244,246,245,0.03)] text-[#F4F6F5]/45';
+                  }
+                  return '<button type="button" data-idx="' + idx + '" ' + (locked ? 'disabled' : '') +
+                    ' class="trivia-opt rounded-[7px] border px-3 py-2 text-center font-[\'Roboto\',sans-serif] text-[0.84rem] font-medium transition-all duration-150 ' +
+                    (locked ? 'cursor-default ' : 'cursor-pointer ') + cls + '">' + opt.label + '</button>';
+                }).join('') +
+              '</div>' +
+              (selOpt
+                ? '<div aria-live="polite" class="mt-2.5 rounded-[6px] border-l-[3px] bg-[rgba(255,255,255,0.04)] px-3 py-2 text-[0.84rem] leading-[1.4] text-[#C3D0C9] ' + (selOpt.ok ? 'border-l-[#D4AF37]' : 'border-l-[#D9383A]') + '"><strong class="font-bold text-[#F4F6F5]">' + selOpt.lead + '</strong>' + selOpt.body + '</div>'
+                : '');
+
+            el.querySelectorAll('.trivia-opt').forEach((btn) => {
+              btn.addEventListener('click', () => {
+                if (answers[id] !== null) return;
+                const idx = Number(btn.getAttribute('data-idx'));
+                answers[id] = { idx, ok: q.options[idx].ok };
+                renderTrivias();
+                renderCopaFinal();
+              });
+            });
+          });
+        }
+
+        const copaFinal = document.getElementById('copa-final');
+        function renderCopaFinal() {
+          const answeredCount = [1, 2, 3].filter((id) => answers[id] !== null).length;
+          const correctCount = [1, 2, 3].filter((id) => answers[id] && answers[id].ok).length;
+          const finished = answeredCount === 3;
+
+          let cardBorder = 'border-[#D4AF37]/60', titleColor = 'text-[#D4AF37]';
+          let title = 'Copa Instagram · En juego (' + answeredCount + '/3 respondidas)';
+          let desc = 'Responde los 3 desafíos de cada capítulo (1 solo intento por pregunta) para ganar la Copa de Oro, Plata o Bronce.';
+          let icon = '🏆', badgeText = correctCount + ' / 3', badgeStyle = 'border-[rgba(244,246,245,0.16)] text-[#C3D0C9]';
+
+          if (finished) {
+            if (correctCount === 3) {
+              cardBorder = 'border-[#D4AF37] shadow-[0_0_24px_rgba(212,175,55,0.18)]';
+              title = '¡Copa de Oro desbloqueada! (3/3 aciertos)';
+              desc = 'Dominas los tres filtros de la tribuna: resultado, expectativas y potencial. Ya no te engañan los comentarios.';
+              badgeText = 'ORO · 3/3';
+              badgeStyle = 'border-[#D4AF37] text-[#D4AF37] shadow-[0_0_18px_rgba(212,175,55,0.28)]';
+            } else if (correctCount === 2) {
+              cardBorder = 'border-[#CBD5E1]/80'; titleColor = 'text-[#E2E8F0]';
+              title = '¡Ganaste la Copa de Plata! (2/3 aciertos)';
+              desc = 'Muy cerca del puntaje perfecto: lees bien a la tribuna digital, aunque un sesgo todavía te sorprendió.';
+              icon = '🥈'; badgeText = 'PLATA · 2/3';
+              badgeStyle = 'border-[#CBD5E1] text-[#E2E8F0] shadow-[0_0_14px_rgba(203,213,225,0.18)]';
+            } else {
+              cardBorder = 'border-[#CD7F32]/85'; titleColor = 'text-[#E3A05B]';
+              title = 'Copa de Bronce (' + correctCount + '/3 ' + (correctCount === 1 ? 'acierto' : 'aciertos') + ')';
+              desc = 'La tribuna de Instagram todavía te hace dudar. Repasa los gráficos de los capítulos y vuelve a intentarlo por el Oro.';
+              icon = '🥉'; badgeText = 'BRONCE · ' + correctCount + '/3';
+              badgeStyle = 'border-[#CD7F32] text-[#E3A05B] shadow-[0_0_14px_rgba(205,127,50,0.2)]';
+            }
+          }
+
+          copaFinal.className = 'mx-auto flex w-full max-w-[740px] flex-wrap items-center justify-between gap-4 rounded-[12px] border bg-[#132A1F] px-5 py-4 font-[\'Roboto\',sans-serif] shadow-xl transition-all duration-300 ' + cardBorder;
+          copaFinal.innerHTML =
+            '<div class="min-w-[240px] flex-1">' +
+              '<h4 class="mb-0.5 font-[\'Bebas_Neue\',sans-serif] text-[1.45rem] font-normal leading-tight tracking-[0.03em] ' + titleColor + '">' + title + '</h4>' +
+              '<p class="text-[0.86rem] leading-[1.4] text-[#C3D0C9]">' + desc + '</p>' +
+            '</div>' +
+            '<div class="flex flex-wrap items-center gap-2.5">' +
+              '<div class="flex items-center gap-2 rounded-[10px] border bg-[#1B3B2B] px-4 py-2.5 font-[\'Bebas_Neue\',sans-serif] text-[1.2rem] tracking-[0.04em] transition-all duration-300 ' + badgeStyle + '">' +
+                '<span aria-hidden="true">' + icon + '</span><span>' + badgeText + '</span>' +
+              '</div>' +
+              (finished && correctCount < 3
+                ? '<button id="retry-trivias-btn" type="button" class="cursor-pointer rounded-[10px] border border-[#D4AF37] bg-[#D4AF37] px-4 py-2.5 font-[\'Bebas_Neue\',sans-serif] text-[1.1rem] leading-none tracking-[0.04em] text-[#132A1F] transition-all duration-200 hover:bg-[#e5c24d]">Volver a intentar</button>'
+                : '') +
+            '</div>';
+
+          const retryBtn = document.getElementById('retry-trivias-btn');
+          if (retryBtn) {
+            retryBtn.addEventListener('click', () => {
+              answers[1] = null; answers[2] = null; answers[3] = null;
+              renderTrivias();
+              renderCopaFinal();
+              const d1 = document.getElementById('desafio-1');
+              if (d1) d1.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+          }
+
+          if (correctCount === 3) {
+            bonusSection.classList.remove('hidden');
+          } else {
+            bonusSection.classList.add('hidden');
+          }
+        }
+
+        // 7. Mini-juego Bonus Final
+        let ballPos = 6, ballDir = 1, ballMoving = true;
+        const ballGroup = document.getElementById('bonus-ball');
+        const bonusTrack = document.getElementById('bonus-track');
+        const shootBtn = document.getElementById('bonus-shoot-btn');
+        const resetBtn = document.getElementById('bonus-reset-btn');
+        const bonusResult = document.getElementById('bonus-result');
+
+        function animateBall() {
+          if (ballMoving) {
+            ballPos += ballDir * 1.35;
+            if (ballPos >= 94) { ballPos = 94; ballDir = -1; }
+            else if (ballPos <= 6) { ballPos = 6; ballDir = 1; }
+            ballGroup.setAttribute('transform', 'translate(' + ballPos * 4 + ', 18)');
+          }
+          requestAnimationFrame(animateBall);
+        }
+        requestAnimationFrame(animateBall);
+
+        function handleShoot() {
+          if (!ballMoving) return;
+          ballMoving = false;
+          const isGoal = ballPos >= 40 && ballPos <= 60;
+          shootBtn.classList.add('hidden');
+          resetBtn.classList.remove('hidden');
+          bonusResult.classList.remove('hidden');
+          bonusResult.innerHTML =
+            '<div class="mb-3.5 rounded-[7px] border-l-[3px] px-3 py-2 text-[0.86rem] leading-snug text-[#F4F6F5] ' +
+              (isGoal ? 'border-l-[#D4AF37] bg-[rgba(212,175,55,0.12)]' : 'border-l-[#D9383A] bg-[rgba(217,56,58,0.14)]') + '">' +
+              (isGoal
+                ? '<strong class="font-bold">⚽ ¡GOL! (1-0) · Tribuna @:</strong> “¡Crack total! Nunca dudé de ti, renovación vitalicia ya 🔥👑”'
+                : '<strong class="font-bold">❌ ¡AFUERA! (0-0) · Tribuna @:</strong> “0.85 de xG y la bota. Véndanlo hoy mismo, que suban a los juveniles 🗑️🤡”') +
+            '</div>' +
+            '<div class="flex items-center gap-3.5 rounded-[10px] bg-[#1B3B2B] px-3.5 py-3">' +
+              '<div class="flex shrink-0 flex-col items-center" aria-hidden="true">' +
+                '<div class="mb-[3px] flex h-[26px] w-[26px] items-center justify-center rounded-[6px_6px_9px_9px] bg-[#E7B98A] text-[0.75rem] font-bold text-[#15221B]">• •</div>' +
+                '<div class="flex h-[46px] w-[40px] items-center justify-center rounded-full bg-[#4A90E2] font-[\'Bebas_Neue\',sans-serif] text-[1.35rem] leading-none text-[#132A1F]">9</div>' +
+              '</div>' +
+              '<div class="rounded-[12px] border-2 border-[#D4AF37] bg-[#F4F6F5] px-3.5 py-2.5 text-[0.88rem] leading-[1.45] text-[#15221B]">' +
+                '<p><strong class="font-bold text-[#132A1F]">El 9:</strong> ' +
+                (isGoal
+                  ? '“La metiste y hoy eres ídolo. Así se vive dentro del área: noventa minutos de desmarques, presión y sacrificio se resumen en un segundo. Para Instagram no importa cómo jugaste; para ellos, el 9 solo existe cuando la pelota cruza la línea.”'
+                  : '“Hiciste todo bien hasta el último toque y ya piden tu salida. Así se vive dentro del área: noventa minutos de desmarques, presión y sacrificio se resumen en un segundo. Para Instagram no importa cómo jugaste; para ellos, el 9 solo existe cuando la pelota cruza la línea.”') +
+                '</p>' +
+              '</div>' +
+            '</div>';
+        }
+
+        function handleResetShot() {
+          ballMoving = true;
+          shootBtn.classList.remove('hidden');
+          resetBtn.classList.add('hidden');
+          bonusResult.classList.add('hidden');
+        }
+
+        bonusTrack.addEventListener('click', handleShoot);
+        bonusTrack.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleShoot(); }
+        });
+        shootBtn.addEventListener('click', handleShoot);
+        resetBtn.addEventListener('click', handleResetShot);
+
+        // 8. Volver arriba
+        document.getElementById('scroll-top-btn').addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        renderTrivias();
+        renderCopaFinal();
+      })();
+    </script>
   </body>
 </html>
-
