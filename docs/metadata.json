@@ -1,0 +1,8 @@
+{
+  "name": "Remix Lienzo Blanco",
+  "description": "Página en blanco desplazable para pegar y previsualizar ideas de código.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
